@@ -1,0 +1,42 @@
+.list-cards{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+   
+}
+.card{
+    cursor: pointer;
+    width: 23rem;
+    background-color:#e8e4dc;
+    border-radius:0 50px 0 50px ;
+    flex-shrink: 0;
+      box-shadow:5px 5px 5px rgba(145, 143, 137, 0.957);
+}
+.card img {
+    height: 250px;
+
+}
+.footercard{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    /* margin: -3px 0; */
+    /* width: 60%;
+    height: 55%; */
+}
+
+.reservation  {
+    text-align: center;
+    /* display: flex;
+    justify-content: end; */
+    /* width:30%; */
+    background-color: #84D1FF;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.reservation:hover{
+    background-color: #5b8298;
+}

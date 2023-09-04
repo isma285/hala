@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@400;600;700&family=Roboto:wght@100;400;700;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'biryani';
+    /* border: 1rem #cd0c0c; */
+}
+
+img{
+ transition: transform 1s;
+    width: 100%;
+}
+/* img:hover{transform: scale(1.1);
+     
+    } */
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+h2{
+    padding: 50px 0 25px;
+    color: #BFF8D4;
+}
+
+h3, p{
+    padding-top:20px ;
+}
+
+/******* NAVBAR */
+.logoimg {
+
+    width: auto;
+    height: 55px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+}
+.logo{
+
+    display: flex;
+    align-items: center;
+}
+
+.profil {
+    padding-left:60px;
+}
+
+/* header {
+    width: 100%;
+    position: fixed;
+    height: 62px;
+    background-color: #ffffff
+} */
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding-left: 30px;
+    height: 62px;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(173, 171, 171, 0.329) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #BFF8D4;
+}
+
+.menu ul{
+    display: flex; 
+    justify-content: space-between;
+     gap: 50px;   
+    
+}
+
+.navlink {
+
+    align-items: center;
+    margin-right: 20px;
+ 
+}
+.burgur{
+    width: 2.2rem;
+    display: none;
+
+}
+@media screen and (max-width: 800px) 
+{
+/* .burgur{
+    display: none;
+}     */
+.menu ul{
+    display: flex; 
+     gap: 50px;   
+     flex-direction: column;
+    
+}
+    .navlink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* margin-left: -100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.navlink.menu-mobile{
+    background-color: rgb(212, 129, 21);
+    width: 75vw;
+    height: 80vh;
+    margin: 0;
+}
+}
+
+.burgur {
+    /* position: absolute;
+    top:10px; */
+    width: 2.2rem;
+    display: block;
+     position: fixed;
+        right: 16px;
+}
+    
