@@ -16,9 +16,7 @@ function Tendances() {
           <p>7nuit/hôtel/pescine </p>
           <p>699,99€</p>
         </a>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+       
       </div>
     </article>
 
@@ -29,9 +27,7 @@ function Tendances() {
         <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
         <p>699,99€</p>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+        
       </div>
     </article>
 
@@ -42,9 +38,7 @@ function Tendances() {
         <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
         <p>699,99€</p>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+        
       </div>
     </article>
 
@@ -55,9 +49,7 @@ function Tendances() {
         <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
         <p>699,99€</p>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+      
       </div>
     </article>
   </div>

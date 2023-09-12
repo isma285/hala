@@ -1,9 +1,16 @@
+.paragraph{
+  text-align: center;
+  margin:2rem 5rem;
+}
 .list-cards{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 3rem;
    
+}
+.card img{
+    border-radius:0 50px 0 0;
 }
 .card{
     cursor: pointer;
@@ -39,4 +46,9 @@
 
 .reservation:hover{
     background-color: #5b8298;
+}
+
+.list-cards{
+    justify-content: center;
+    
 }

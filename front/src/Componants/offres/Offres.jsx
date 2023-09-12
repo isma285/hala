@@ -3,6 +3,7 @@ import "./Offres.css"
 function Offres() {
   return (
     <section className="block">
+      <p className='paragraph'>Bienvenue chez Hala Voyage, votre passerelle vers une aventure sans souci et des découvertes inoubliables. Chez Hala Voyage, nous avons consacré notre expertise à la création de voyages organisés exceptionnels, conçus pour vous offrir des expériences de voyage enrichissantes et sans tracas.</p>
   <h2>Les meilleures offres:</h2>
   <div className="list-cards">
     <article className="card">
@@ -16,9 +17,7 @@ function Offres() {
           <p>7nuit/hôtel/pescine </p>
           <p>699,99€</p>
         </a>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+       
       </div>
     </article>
     <article className="card">
@@ -28,21 +27,17 @@ function Offres() {
         <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
         <p>699,99€</p>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+      
       </div>
     </article>
     <article className="card">
       <img src="../../../public/Tailande.jpg" alt="" />
       <div className="footercard">
         <h3>Tailande</h3>
-        <p>Depart de marseille le 22/9/2023</p>
+        {/* <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p>
-        <a className="reservation" href="#">
-          Réservation
-        </a>
+        <p>699,99€</p> */}
+        
       </div>
     </article>
   </div>
