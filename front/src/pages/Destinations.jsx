@@ -1,8 +1,7 @@
 import React from 'react'
 
-function Destinations() {
+const Destinations = () => {
   return (
-  
     <div>Destinations</div>
   )
 }

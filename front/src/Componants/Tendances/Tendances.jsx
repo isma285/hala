@@ -12,9 +12,9 @@ function Tendances() {
       <div className="footercard">
         <a href="https://chat.openai.com/">
           <h3>Dubai</h3>
-          <p>Depart de marseille le 22/9/2023</p>
+          {/* <p>Depart de marseille le 22/9/2023</p>
           <p>7nuit/hôtel/pescine </p>
-          <p>699,99€</p>
+          <p>699,99€</p> */}
         </a>
        
       </div>
@@ -24,9 +24,9 @@ function Tendances() {
       <img src="../../../public/Andalousie2.png" alt="" />
       <div className="footercard">
         <h3>Indonésie</h3>
-        <p>Depart de marseille le 22/9/2023</p>
+        {/* <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p>
+        <p>699,99€</p> */}
         
       </div>
     </article>
@@ -35,23 +35,14 @@ function Tendances() {
       <img src="../../../public/Grèce.png" alt="" />
       <div className="footercard">
         <h3>Grèce</h3>
-        <p>Depart de marseille le 22/9/2023</p>
+        {/* <p>Depart de marseille le 22/9/2023</p>
         <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p>
+        <p>699,99€</p> */}
         
       </div>
     </article>
 
-    <article className="card">
-      <img src="../../../public/Grèce.png" alt="" />
-      <div className="footercard">
-        <h3>Grèce</h3>
-        <p>Depart de marseille le 22/9/2023</p>
-        <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p>
-      
-      </div>
-    </article>
+  
   </div>
 </section>
 

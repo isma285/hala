@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import Styles from './Nav.css'
+
 import DivBurger from "./DivBurger";
 
 export default function () {
@@ -14,7 +14,7 @@ export default function () {
 			<nav className="menu">
 				<div className="logo">
 					<Link to="#">
-						<img className="logoimg" src="/public/Fichier 1.svg" alt="#" />
+						<img className="logoimg" src="/public/Fichier 1.svg" alt="" />
 					</Link>
 				</div>
 				{menu ? <DivBurger /> : null}

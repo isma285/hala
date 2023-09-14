@@ -1,9 +1,9 @@
 import React from 'react'
 
-function connexion() {
+const Connexion = () => {
   return (
-    <div>connexion</div>
+    <div>Connexion</div>
   )
 }
 
-export default connexion
+export default Connexion

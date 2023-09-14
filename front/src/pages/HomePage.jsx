@@ -1,8 +1,16 @@
 import React from 'react'
+import Heder from '../Componants/heder/Heder'
+import Offres from '../Componants/offres/Offres'
+import Tendances from '../Componants/Tendances/Tendances'
 
-function HomePage() {
+const HomePage = () => {
   return (
-	<div>HomePage</div>
+  <>
+  
+  <Heder/>
+  <Offres/>
+  <Tendances/>
+  </>
   )
 }
 

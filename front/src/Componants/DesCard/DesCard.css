@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    /* border: 1rem #cd0c0c; */
+}
+
+.descreption-card{
+    padding: 1rem 2rem;
+    display: block;
+   
+   
+}
+.info-card{
+   
+  margin:0 3rem;
+
+}
+.info-card li { 
+    width: 300px;
+    padding-top: 1rem;
+}
+.info-card h3 {
+    font-size: 25px;
+   
+}
+.image {
+    flex-shrink: 1;
+    margin-right:2rem ;
+    width: 31rem;
+    height: 100%;
+    border-radius: 0 100px 0 100px;
+    box-shadow:5px 5px 10px 5px rgba(145, 143, 137, 0.957);
+
+} 
+.reservation  {
+    /* text-align: center; */
+    /* display: flex;
+    justify-content: end; */
+  
+    color: rgb(244, 246, 248);
+    background-color:  #05a741;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.reservation:hover{
+    background-color: #055121e2;
+}
+.first-card{
+    display: flex;
+    margin: 3rem 0;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 1rem;
+   
+}
+.text-descreption{
+   width: 250px;
+    max-height: 300px;
+     border-radius: 10px;
+    background:  #bff8d4e2;
+    /* Scrolle */
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  
+    
+}
+::-webkit-scrollbar {
+    width: 10px;
+  
+  }
+  
+ 
+  ::-webkit-scrollbar-track {
+    background:  #bff8d4e2;
+      border-radius: 50px;
+  }
+  
+ 
+  ::-webkit-scrollbar-thumb {
+    background: #9ee3b7e2;
+    border-radius: 50px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+.text-descreption p {
+    margin: 2rem;
+}

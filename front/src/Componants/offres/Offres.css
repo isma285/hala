@@ -9,19 +9,19 @@
     gap: 3rem;
    
 }
-.card img{
-    border-radius:0 50px 0 0;
-}
+
 .card{
     cursor: pointer;
     width: 23rem;
     background-color:#e8e4dc;
     border-radius:0 50px 0 50px ;
-    flex-shrink: 0;
+    /* Compreser les card */
+    flex-shrink: 1;
       box-shadow:5px 5px 5px rgba(145, 143, 137, 0.957);
 }
 .card img {
-    height: 250px;
+    height: 15.5rem;
+    border-radius:0 50px 0 0;
 
 }
 .footercard{
@@ -51,4 +51,13 @@
 .list-cards{
     justify-content: center;
     
+}
+
+
+@media screen and (max-width:320px) and (portrait){
+    .card img{
+        border-radius:0 50px 0 0;
+        width: 20rem;
+
+    }
 }

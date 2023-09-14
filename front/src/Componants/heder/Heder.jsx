@@ -1,8 +1,9 @@
-import React from 'react'
+import './Heder.css'
 
 function Heder() {
   return (
-    <div><img src="../../../public/Dubai.png" alt="" /></div>
+    <div className='firstimg'> 
+    </div>
   )
 }
 
