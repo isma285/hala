@@ -3,11 +3,11 @@ import React from 'react'
 function Tendances() {
   return (
     <section className="block">
-  <h2>Les Destinations tendances: </h2>
+  <h2>Les destinations tendances </h2>
   <div className="list-cards">
     <article className="card">
       <a href="https://chat.openai.com/">
-        <img src="../../../public/Dubai.png" alt="" />
+        <img src="/Dubai.png" alt="" />
       </a>
       <div className="footercard">
         <a href="https://chat.openai.com/">
@@ -21,7 +21,7 @@ function Tendances() {
     </article>
 
     <article className="card">
-      <img src="../../../public/Andalousie2.png" alt="" />
+      <img src="/Andalousie2.png" alt="" />
       <div className="footercard">
         <h3>Indonésie</h3>
         {/* <p>Depart de marseille le 22/9/2023</p>
@@ -32,7 +32,7 @@ function Tendances() {
     </article>
 
     <article className="card">
-      <img src="../../../public/Grèce.png" alt="" />
+      <img src="/Grèce.png" alt="" />
       <div className="footercard">
         <h3>Grèce</h3>
         {/* <p>Depart de marseille le 22/9/2023</p>

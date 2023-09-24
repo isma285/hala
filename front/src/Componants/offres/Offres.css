@@ -12,7 +12,8 @@
 
 .card{
     cursor: pointer;
-    width: 23rem;
+    width: 20rem;
+    /* width: 100%; */
     background-color:#e8e4dc;
     border-radius:0 50px 0 50px ;
     /* Compreser les card */

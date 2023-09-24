@@ -16,8 +16,8 @@ img {
     transition: transform 1s;
     width: 100%;
 }
-
-/* img:hover{transform: scale(1.1);
+/* 
+img:hover{transform: scale(1.1);
      
     } */
 a {
@@ -26,12 +26,17 @@ a {
 }
 
 h2 {
+  
     padding: 2rem 2rem;
     color: #000703;
 
 }
 
-h3,
+h3 {  
+    font-size: 18px;
+  text-align: center;
+}
+
 p {
     font-size: 16px;
 }
@@ -72,9 +77,10 @@ p {
     align-items: center;
     box-shadow: 5px 5px 5px rgba(173, 171, 171, 0.329);
     /* position: fixed; */
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
     background-color: #bff8d4e2;
+  
 }
 
 .menu ul {
@@ -85,11 +91,15 @@ p {
 }
 
 .navlink {
-
-    align-items: center;
-    margin-right: 20px;
-
+    display: flex;
+margin-right: 1rem;
+gap: 2.5rem;
+   
+    /* align-items: center; */
+   
 }
+.navlink 
+
 
 /*  le burgur il est ici  */
 /* .burgur {
@@ -100,7 +110,7 @@ p {
 .menu ul {
     display:flex;
 }
-@media screen and (min-width:801px) {
+@media screen and (min-width:701px) {
     
 
 .burgur {
@@ -109,7 +119,7 @@ p {
 }
 
 /* ////// Résponsive phone /////// */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     .burgur {
         position: absolute;
         top: 15px;
@@ -143,6 +153,15 @@ p {
         width: 105vw;
         height: 100vh;
         border-radius: 0 50px 50px 0;
+        /* transition: transform 3s ease-in-out; */
 
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .ismatop {
+        display: none;
     }
 }

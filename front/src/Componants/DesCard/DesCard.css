@@ -67,7 +67,6 @@
     overflow-y: scroll;
     scrollbar-width: thin;
   
-    
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -91,4 +90,26 @@
   }
 .text-descreption p {
     margin: 2rem;
+}
+@media screen and (max-width: 391px) {
+       
+    .image{
+        width: 100%;
+        text-align: center;
+    
+    
+    }
+.text-descreption{
+    display: block;
+    width: 250px;
+    max-height: 300px;
+
+}
+    .text-descreption{
+       display: none;
+        border-radius: 10px;
+        background:  #bff8d4e2;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+    }
 }

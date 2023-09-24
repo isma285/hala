@@ -6,7 +6,7 @@ function DesCard() {
 			<article className="first-card">
 				<img
 					className="image"
-					src="../../../public/thailandehotel.jpg"
+					src="/thailandehotel.jpg"
 					alt=""
 				/>
 				<div className="text-descreption">
@@ -38,7 +38,7 @@ function DesCard() {
 			<article className="first-card">
 				<img
 					className="image"
-					src="../../../public/thailande-maison.webp"
+					src="/thailande-maison.webp"
 					alt=""
 				/>
 				<div className="text-descreption">

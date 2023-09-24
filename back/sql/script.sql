@@ -6,18 +6,18 @@ CREATE TABLE hala.admin(
     lastname VARCHAR(50) NOT NULL,
     firstname VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
-    email  VARCHAR(50) NOT NULL
+    email VARCHAR(50) NOT NULL
 );
 
 
 CREATE TABLE hala.client(
-     id MEDIUMINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id MEDIUMINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     lastname VARCHAR(50) NOT NULL,
     firstname VARCHAR(50) NOT NULL,
-    adrsse  VARCHAR(50) NOT NULL,
+    adresse  VARCHAR(50) NOT NULL,
     birthay DATE,
     email VARCHAR(50) NOT NULL,
-    passeword VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
     nmrtlfn VARCHAR(10) NOT NULL
 );
 
@@ -37,8 +37,9 @@ CREATE TABLE hala.destination(
 
 CREATE TABLE hala.offres(
     id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    aeroport VARCHAR (50) NOT NULL,
     datedepart DATE,
-    datederotour DATE,
+    dateretour DATE,
     prix SMALLINT,
     guide BOOLEAN NOT NULL,
     promotion SMALLINT,
@@ -61,7 +62,7 @@ INSERT INTO hala.client
 VALUES
 ( NULL, 'fekih','Abdel','75-paris,france', '2004-02-22','abdel@gmail.com','*****', '0655998899'),
 
-( NULL, 'lokmane','fekih','75-paris,france', '2004-02-22','lok@gmail.com','*****', '0655998899')
+( NULL, 'lokmane','m','75-paris,france', '2004-02-22','lok@gmail.com','*****', '0655998899')
 ;
 
 INSERT INTO hala.typehebergement
@@ -76,15 +77,17 @@ VALUES
 
 (NULL,'Santorin', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
 
-(NULL,'Alger', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+(NULL,'Bali', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
 
 (NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 )
 ;
 
 INSERT INTO hala.offres
 VALUES 
-(NULL, '2023-11-10','2023-11-20', 875 , 1, 780, 1, 1),
-(NULL,'2024-01-20','2024-01-30', 875 , 0, 875, 2, 2)
+(NULL,'Roissy CDG ', '2023-11-10','2023-11-20', 875 , 1, 780, 1, 1),
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
+(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 2)
 ;
 
 INSERT INTO hala.client_offres

@@ -15,7 +15,7 @@
 --  offres.destination_id = destination.id
 -- WHERE 
 --     typehebergement.tyhotelapart = "Hôtel"
-;
+-- ;
 
 -- 02: selectioner toutes les destinations tendances
 -- SELECT destination.ville,destination.tendance
@@ -37,15 +37,21 @@
 -- SELECT destination.ville
 -- FROM hala.destination;
 
-SELECT offres.*, destination.*
-FROM hala.offres
-JOIN
- hala.destination
-ON
- offres.destination_id = destination.id
-WHERE offres.id = 2
-\G
 
+-- SELECT offres.*, destination.*
+-- FROM hala.offres
+-- JOIN
+--  hala.destination
+-- ON
+--  offres.destination_id = destination.id
+-- WHERE offres.id = 2;
+
+
+-- 05: selectioner une destination par :id
+
+SELECT destination.*
+FROM hala.destination
+WHERE destination.id = 3;
 
 
 

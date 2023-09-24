@@ -1,0 +1,73 @@
+
+section {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    ;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+
+    /* background: rgb(112, 231, 187); */
+}
+form{
+    width: auto;
+    height: auto;
+    background: rgb(191, 231, 191);
+    border-radius: 50px;
+    padding: 2rem;
+
+}
+
+.email {
+    /* flex-wrap: wrap; */
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    width: 24rem;
+    padding: 5px;
+
+}
+
+
+.inputemail {
+
+    font-size: 18px;
+    padding-left: 8px;
+    height: 3rem;
+    width: 22rem;
+    border: none;
+    border-radius: 15px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+    width: 22rem;
+    margin: 20px 0;
+  
+    border-radius: 15px;
+    cursor: pointer;
+}
+.email a {
+   
+    color:#4CAF50 ;
+}
+
+@media screen and (max-width: 310px)and (portrait){
+    .email {
+        /* flex-wrap: wrap; */
+        display: block;
+        flex-direction: column;
+        align-items:center ;
+        width: 0rem;
+        padding: 5px;
+    
+    }
+    
+}

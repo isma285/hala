@@ -4,7 +4,7 @@ export default function Footer() {
 	return (
 		<>
 			<footer>
-				<div>
+				<div >
 					<h3> A Propos</h3>
 					<li>
 						<a href="#">À propos de nous</a>
