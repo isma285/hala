@@ -6,6 +6,9 @@ import Destinations from "../pages/Destinations";
 import Connexion from "../pages/Connexion";
 import DescriptionCard from "../pages/DescriptionCard";
 import Sinscrire from "../Componants/Sinscrire/Sinscrire";
+import ContactezNs from "../pages/ContactezNs";
+import Reservation from "../Componants/Reservation/Reservation";
+import LogoutPage from "../Componants/LogoutPage/LogoutPage";
 
 const router = createBrowserRouter([
 	{
@@ -17,25 +20,38 @@ const router = createBrowserRouter([
 				element: <HomePage />,
 			},
 			{
-				path: "/destinations",
+				path: "destinations",
 				element: <Destinations />,
 			},
 			{
-				path: "/promotions",
+				path: "promotions", 
 				element: <Promotions />,
 			},
 			{
-				path: "/connexion",
+				path: "connexion",
 				element: <Connexion />,
 			},
 			{
-				path: "/offres/pays/:id",
+				path: "offres/pays/:id",
 				element: <DescriptionCard />,
 			},
 			{
-				path: "/inscription",
+				path: "inscription",
 				element: <Sinscrire />,
 			},
+			{
+				path: "contactezNs",
+				element: <ContactezNs />,
+			},
+			{
+				path: "reservation",
+				element: <Reservation />,
+			},
+			{
+				path: "logout",
+				element: <LogoutPage />,
+			},
+
 		],
 	},
 ]);

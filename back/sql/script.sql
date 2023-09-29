@@ -5,21 +5,30 @@ CREATE TABLE hala.admin(
     id MEDIUMINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     lastname VARCHAR(50) NOT NULL,
     firstname VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(150) NOT NULL
 );
+-- INSERT INTO hala.admin
+-- VALUES
+-- ( NULL, 'lo','lo' ,'l@l.l','l');
 
+
+-- créer la table rôle 
+CREATE TABLE hala.role(
+    id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
 
 CREATE TABLE hala.client(
     id MEDIUMINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     lastname VARCHAR(50) NOT NULL,
     firstname VARCHAR(50) NOT NULL,
-    adresse  VARCHAR(50) NOT NULL,
-    birthay DATE,
     email VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    nmrtlfn VARCHAR(10) NOT NULL
+    password VARCHAR(200) NOT NULL,
+    role_id TINYINT UNSIGNED NOT NULL,
+    FOREIGN KEY(role_id) REFERENCES hala.role(id)
 );
+
 
 CREATE TABLE hala.typehebergement(
     id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -58,12 +67,20 @@ CREATE TABLE hala.client_offres(
     PRIMARY KEY(offres_id, client_id)
 );
 
+INSERT INTO hala.role
+VALUES 
+    (NULL,'admin'),
+    (NULL,'client')
+;
+
 INSERT INTO hala.client
 VALUES
-( NULL, 'fekih','Abdel','75-paris,france', '2004-02-22','abdel@gmail.com','*****', '0655998899'),
-
-( NULL, 'lokmane','m','75-paris,france', '2004-02-22','lok@gmail.com','*****', '0655998899')
+( NULL, 'fekih','Abdel','abdel@gmail.com','abdel',2),
+( NULL, 'lokmane','m','lok@gmail.com','lokmane',2),
+( NULL, 'isma','isma','admin@admin.com','isma',1)
 ;
+-- insertion de données
+
 
 INSERT INTO hala.typehebergement
 VALUES 
@@ -73,21 +90,30 @@ VALUES
 
 INSERT INTO hala.destination
 VALUES 
-(NULL, 'Rome', 'rome.png','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 0 ),
+-- thailande
+(NULL, 'Rome', 'Andalousie2.png','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 0 ),
 
-(NULL,'Santorin', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
-
+-- maldive
+(NULL,'Santorin', 'Andalousie2.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+-- singapour
 (NULL,'Bali', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
 
+-- italy
+(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+-- dubai
+(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+-- indonesie
+(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 6 ),
+-- grece
 (NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 )
 ;
 
 INSERT INTO hala.offres
 VALUES 
 (NULL,'Roissy CDG ', '2023-11-10','2023-11-20', 875 , 1, 780, 1, 1),
-(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
-(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
-(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 2)
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 2),
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3),
+(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 4)
 ;
 
 INSERT INTO hala.client_offres

@@ -91,23 +91,25 @@
 .text-descreption p {
     margin: 2rem;
 }
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 601px) {
        
     .image{
-        width: 100%;
+        width: 105%;
         text-align: center;
+        border-radius:  0 50px;
+        margin-right: 10px;
     
     
     }
 .text-descreption{
     display: block;
-    width: 250px;
+    width: 350px;
     max-height: 300px;
 
 }
     .text-descreption{
        display: none;
-        border-radius: 10px;
+        border-radius: 5px;
         background:  #bff8d4e2;
         overflow-y: scroll;
         scrollbar-width: thin;

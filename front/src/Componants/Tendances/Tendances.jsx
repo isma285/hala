@@ -1,24 +1,29 @@
 import React from 'react'
 
-function Tendances() {
+export const Tendances = () => {
+
   return (
     <section className="block">
   <h2>Les destinations tendances </h2>
+
   <div className="list-cards">
+
+  {/* <Link to={"/offres/pays/4"}> */}
+
     <article className="card">
-      <a href="https://chat.openai.com/">
-        <img src="/Dubai.png" alt="" />
-      </a>
+      
+        <img src="/Dubai.png" alt=""/>
+     
       <div className="footercard">
-        <a href="https://chat.openai.com/">
+        
           <h3>Dubai</h3>
           {/* <p>Depart de marseille le 22/9/2023</p>
           <p>7nuit/hôtel/pescine </p>
           <p>699,99€</p> */}
-        </a>
-       
+        
       </div>
     </article>
+    {/* </Link> */}
 
     <article className="card">
       <img src="/Andalousie2.png" alt="" />

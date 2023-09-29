@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import './Nav.css'
 
-import DivBurger from "./DivBurger";
+// import DivBurger from "./DivBurger";
 
-export default function () {
-	const [menu, setMenu] = useState(false);
-	function changeclass() {
-		setMenu(!menu);
-		console.log(menu);
-	}
+const Nav = () => {
+	
+	const [menu, setMenu] = useState("");
+	// function changeclass() {
+	// 	setMenu(!menu);
+		// console.log(menu);
+	
 	return (
 		<>
 			<nav className="menu">
@@ -17,41 +19,46 @@ export default function () {
 						<img className="logoimg" src="/Fichier 1.svg" alt="" />
 					</Link>
 				</div>
-					<div className="navlink">
+					
+						<ul className={`navlink ${menu}`}>
 				<li className="ismatop">
 					<Link to="/destinations">
-						<h3>Toutes les offres</h3>
+						Toutes les offres
 					</Link>
 				</li>
 				<li className="ismatop">
 					<Link to="/promotions">
-						<h3>Promotions</h3>
+						Promotions
 					</Link>
 				</li>
 				<li className="ismatop">
-					<Link to="/">
-						<h3>Contactez-nous</h3>
+					<Link to="/contactezNs">
+						Contactez-nous
 					</Link>
 				</li>
 				<li className="ismatop">
 					<Link to="/connexion">
-						<h3>Se connecter</h3>
+						Se connecter
 					</Link>
 				</li>
-				</div>
+				</ul>
+			
 
-				{menu ? <DivBurger /> : null}
+				{/* {menu ? <DivBurger /> : null} */}
 
 				{/* rome-ignore lint/a11y/useButtonType: <explanation> */}
 
 				{/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-				<img
+				<img src="/menu (1).png"
 					className="burgur"
-					onClick={changeclass}
-					src="/menu (1).png"
-					alt=""
+					onClick={() => {
+					setMenu(menu =="" ? "mobile-menu" : 
+					"");
+					}}
 				/>
 			</nav>
 		</>
 	);
-}
+			};
+export default Nav;
+

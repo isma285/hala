@@ -1,7 +1,7 @@
 import React from 'react'
 import Heder from '../Componants/heder/Heder'
 import Offres from '../Componants/offres/Offres'
-import Tendances from '../Componants/Tendances/Tendances'
+// import Tendances from '../Componants/Tendances/Tendances'
 
 const HomePage = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage = () => {
   
   <Heder/>
   <Offres/>
-  <Tendances/>
+  {/* <Tendances/> */}
   </>
   )
 }

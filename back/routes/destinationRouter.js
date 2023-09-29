@@ -6,8 +6,18 @@ const destinationRouter = express.Router();
 destinationRouter.get("/", async (req, res) => {
 	// requete sql a exécuter
 	const query = `
-	SELECT destination.*
-	FROM hala.destination;
+		SELECT offres.*, typehebergement.tyhotelapart, destination.ville, destination.photo, destination.textdescription
+		FROM
+		hala.offres
+		JOIN
+		hala.typehebergement
+		ON
+		offres.typehebergement_id = typehebergement.id
+		JOIN
+		hala.destination
+		ON
+		offres.destination_id = destination.id
+		;
     `;
 
 	// exécuter la requete
@@ -30,6 +40,8 @@ destinationRouter.get("/", async (req, res) => {
 		});
 	}
 });
+
+
 destinationRouter.get("/:id", async (req, res) => {
 	// requete sql a exécuter
 	const { id } = req.params;

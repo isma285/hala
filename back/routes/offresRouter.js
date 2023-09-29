@@ -46,7 +46,7 @@ offresRouter.post("/create", async (req, res) => {
 	// requete sql a éxécuter
 	const query = `
     INSERT INTO hala.offres
-    VALUE (NULL, :aeroport, :datedepart, :dateretour, :prix, :guide, :promotion, :typehebergement_id, :destination_id)
+    VALUE (NULL,:photo, :aeroport, :datedepart, :dateretour, :prix, :guide, :promotion, :typehebergement_id, :destination_id)
 
     `;
 
@@ -63,6 +63,39 @@ offresRouter.post("/create", async (req, res) => {
 		});
 	} catch (error) {
 		// renovoyer une erreur
+		return res.status(400).json({
+			status: 400,
+			message: "Error",
+		});
+	}
+});
+
+offresRouter.get("/destination/:id", async (req, res) => {
+	// const { id } = req.params;
+
+	// requete sql a exécuter
+	const query = `
+		SELECT offres.*, destination.ville, destination.textdescription
+		FROM hala.offres
+		JOIN hala.destination
+		ON destination.id = offres.destination_id
+		WHERE destination.id = :id;
+    `;
+
+	// exécuter la requete
+	try {
+		// récuperer les resultats de la requete
+		const [results] = await dbConnection.execute(query, req.params);
+		// console.log(results);
+
+		// renvoyer la reponse HTTP
+		return res.status(200).json({
+			status: 200,
+			message: "OK",
+			data: results,
+		});
+	} catch (error) {
+		// renvoyer une erreur
 		return res.status(400).json({
 			status: 400,
 			message: "Error",
