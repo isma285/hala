@@ -8,7 +8,9 @@ import DescriptionCard from "../pages/DescriptionCard";
 import Sinscrire from "../Componants/Sinscrire/Sinscrire";
 import ContactezNs from "../pages/ContactezNs";
 import Reservation from "../Componants/Reservation/Reservation";
-import LogoutPage from "../Componants/LogoutPage/LogoutPage";
+import LogoutPage from "../Componants/LogoutForm/LogoutForm";
+import { LoginPage } from "../pages/Laconexcion/LoginPage";
+import { SinscrirePage } from "../pages/Laconexcion/SinscrirePage";
 
 const router = createBrowserRouter([
 	{
@@ -44,13 +46,21 @@ const router = createBrowserRouter([
 				element: <ContactezNs />,
 			},
 			{
+				path: "logout",
+				element: <LogoutPage/>,
+			},
+			{
 				path: "reservation",
 				element: <Reservation />,
 			},
 			{
-				path: "logout",
-				element: <LogoutPage />,
+				path: "seconnecter",
+				element: <LoginPage />,
 			},
+			// {
+			// 	path: "sinscrire",
+			// 	element: <SinscrirePage />,
+			// },
 
 		],
 	},

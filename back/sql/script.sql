@@ -75,10 +75,14 @@ VALUES
 
 INSERT INTO hala.client
 VALUES
-( NULL, 'fekih','Abdel','abdel@gmail.com','abdel',2),
-( NULL, 'lokmane','m','lok@gmail.com','lokmane',2),
-( NULL, 'isma','isma','admin@admin.com','isma',1)
+( NULL, 'isma','isma','admin@admin.com','$argon2i$v=19$m=16,t=2,p=1$UE5HNjY4cmpTNWVxWGt6Ng$skcGVwo20s9glKYuq15ENA',1),
+( NULL, 'fekih','Abdel','abdel@gmail.com','$argon2i$v=19$m=16,t=2,p=1$bFZ4U1kzNlBtbjJQM2cwQQ$1WPFdUIejNIseo60AQXYiQ',2),
+( NULL, 'lokmane','m','lok@gmail.com','lokmane',2)
 ;
+-- isma
+-- abdel
+
+
 -- insertion de données
 
 
@@ -113,7 +117,10 @@ VALUES
 (NULL,'Roissy CDG ', '2023-11-10','2023-11-20', 875 , 1, 780, 1, 1),
 (NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 2),
 (NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3),
-(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 4)
+(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 4),
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 2),
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3)
+
 ;
 
 INSERT INTO hala.client_offres

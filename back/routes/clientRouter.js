@@ -134,7 +134,7 @@ clientRouter.post("/login", async (req, res) => {
 	if (! (await argon2.verify(client.password, req.body.password))) {
 		return res.status(403).json({
 			status: 403,
-			message: "forbidden",
+			message: "forbidden"
 		});
 	}
 
@@ -142,7 +142,7 @@ clientRouter.post("/login", async (req, res) => {
 	return res.status(200).json({
 		status: 200,
 		message: "ok",
-		data: client,
+		data: client
 	});
 });
 

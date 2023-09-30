@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../providers/UserProvider";
 
-const LogoutPage = () => {
+const LogoutFrom = () => {
 	// accéder a l'utilisateur stocké dans le contexte 
 	const {user ,setUser} = useContext(UserContext);
 
@@ -21,4 +21,4 @@ const LogoutPage = () => {
 	return <></>;
 };
 
-export default LogoutPage;
+export default LogoutFrom;

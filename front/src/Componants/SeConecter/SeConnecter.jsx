@@ -13,16 +13,22 @@ export const SeConnecter = () => {
 		watch,
 		register,
 	} = useForm();
-
+// import le contexte de l'utilisateur
 	const { user, setUser } = useContext(UserContext);
 
 	const navigate = useNavigate();
-
+// affichage d'un message
 	const [message, setMessage] = useState();
 
+// soumission du formulaire
 	const onSubmit = async (values) => {
-
+	// appel de la route d'API créant un utilisateur
+	// console.log(values);
 		const responseAPI = await checkUser(values);
+
+		// stoker l'utilisateur dans un context
+		// console.log(responseAPI);
+
 		if (responseAPI.status === 200) {
 			setUser(responseAPI.data);
 			window.sessionStorage.setItem("notice", "You are login");
@@ -32,6 +38,8 @@ export const SeConnecter = () => {
 			setTimeout(() => setMessage(), 5000);
 		}
 	};
+	// observateur de la saisie
+
 	useEffect(() => {
 		const observer = watch((values) => console.log(values));
 
@@ -44,9 +52,11 @@ export const SeConnecter = () => {
 			<section>
 				<p> {message} </p>
 				<form onSubmit={handleSubmit(onSubmit)}>
+					
 					<div className="email">
                         <h3>Se connecter</h3>
 						<label for="email">Email</label>
+						{/* utiliser les noms des colonnes sql pour le nom des champs */}
 
 						<input
 							className="inputemail"
@@ -79,6 +89,6 @@ export const SeConnecter = () => {
 			</section>
 		</>
 	);
-}
+};
 
 export default SeConnecter;
