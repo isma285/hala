@@ -95,29 +95,29 @@ VALUES
 INSERT INTO hala.destination
 VALUES 
 -- thailande
-(NULL, 'Rome', 'Andalousie2.png','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 0 ),
+(NULL, 'Rome', 'thailande-maison.webp','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 2 ),
 
 -- maldive
-(NULL,'Santorin', 'Andalousie2.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+(NULL,'Santorin', 'thailandehotel.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 -- singapour
-(NULL,'Bali', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+(NULL,'Bali', 'dubai-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 
 -- italy
-(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+(NULL,'Paris', 'thailandehotel.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 -- dubai
-(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 ),
+(NULL,'Paris', 'grece-hotel.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 -- indonesie
-(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 6 ),
+(NULL,'Paris', 'maldives-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 6 ),
 -- grece
-(NULL,'Paris', 'santorini.png','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 )
+(NULL,'Paris', 'maldives-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 )
 ;
 
 INSERT INTO hala.offres
 VALUES 
 (NULL,'Roissy CDG ', '2023-11-10','2023-11-20', 875 , 1, 780, 1, 1),
-(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 2),
-(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3),
-(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 4),
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
+(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 1),
 (NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 2),
 (NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3)
 

@@ -1,11 +1,6 @@
-import React from 'react'
-import SeConnecter from '../../Componants/SeConecter/SeConnecter'
+import SeConnecter from "../../Componants/SeConecter/SeConnecter";
 
-export const LoginPage = () => {
-  return (
-   
-    <>
-    <SeConnecter/>
-   </>
-  )
-}
+const LoginPage = () => {
+	return <SeConnecter />;
+};
+export default LoginPage;

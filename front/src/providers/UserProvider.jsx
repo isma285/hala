@@ -2,18 +2,18 @@ import {createContext, useState } from "react";
 
 
 // créer un contexte : support de donnes
-const UserContext = createContext();
+const ClientContext = createContext();
 // créer un provider : composant associé à un contexte 
-const UserProvider = ({children}) => {
+const ClientProvider = ({children}) => {
 // value : permet de définir les donnes associées au Provider
-    const [user,setUser] = useState();
+    const [Client,setClient] = useState();
 
 
-    return <UserContext.Provider value={ {user, setUser} }>
+    return <ClientContext.Provider value={ {Client, setClient} }>
         {children}
-    </UserContext.Provider>
+    </ClientContext.Provider>
 
 }
 
 
-export {UserContext, UserProvider }
+export {ClientContext, ClientProvider }

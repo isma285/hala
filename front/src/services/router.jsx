@@ -1,16 +1,19 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Mainlayout } from "../layout/Mainlayout";
+import {createBrowserRouter} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Promotions from "../pages/Promotions";
 import Destinations from "../pages/Destinations";
 import Connexion from "../pages/Connexion";
 import DescriptionCard from "../pages/DescriptionCard";
-import Sinscrire from "../Componants/Sinscrire/Sinscrire";
 import ContactezNs from "../pages/ContactezNs";
 import Reservation from "../Componants/Reservation/Reservation";
 import LogoutPage from "../Componants/LogoutForm/LogoutForm";
-import { LoginPage } from "../pages/Laconexcion/LoginPage";
-import { SinscrirePage } from "../pages/Laconexcion/SinscrirePage";
+import SinscrirePage from "../pages/Laconexcion/SinscrirePage";
+import Guard from "../Componants/Guard/Guard";
+import TestPage from "../pages/TestPage";
+import AdminLayout from "../layout/AdminLayout";
+import LoginPage from "../pages/Laconexcion/LoginPage";
+import Mainlayout from "../layout/Mainlayout";
+import AdminHomePage from "../pages/admin/AdminHomePage";
 
 const router = createBrowserRouter([
 	{
@@ -39,7 +42,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "inscription",
-				element: <Sinscrire />,
+				element: <SinscrirePage />,
 			},
 			{
 				path: "contactezNs",
@@ -57,13 +60,37 @@ const router = createBrowserRouter([
 				path: "seconnecter",
 				element: <LoginPage />,
 			},
-			// {
-			// 	path: "sinscrire",
-			// 	element: <SinscrirePage />,
-			// },
-
+			{
+				path: "test",
+				element: <TestPage />,
+			},
+		
 		],
 	},
+	{
+		path: "/admin/",
+		element: (
+			<Guard role="admin">
+				<AdminLayout />
+			</Guard>
+		),
+		children: [
+			{
+				path: "",
+				element: <AdminHomePage />
+			},
+			// {
+			// 	path: "students/:id?",
+			// 	element: <AdminStudentsHomePage />,
+			// },
+			// {
+			// 	path: "students/:id?/form",
+			// 	element: <AdminStudentsFormPage />,
+			// },
+		],
+	},
+
+
 ]);
 
 export default router;

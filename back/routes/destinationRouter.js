@@ -79,7 +79,7 @@ destinationRouter.post("/create", async (req, res) => {
       
 		INSERT INTO hala.destination
 		VALUE ( NULL, :ville , :photo, :textdescription, :tendance)
-		§§§§§§§§§§§§§§§§§§§§ table jointure
+		
     `;
 
 	// exécuter la requete
@@ -101,5 +101,6 @@ destinationRouter.post("/create", async (req, res) => {
 		});
 	}
 });
+
 
 export default destinationRouter;

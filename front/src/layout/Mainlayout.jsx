@@ -1,23 +1,19 @@
-import React, { useContext } from 'react'
-// import Nav from '../Componants/nav/Nav'
-import { Outlet } from 'react-router-dom'
-import Footer from '../Componants/Footer/Footer'
-import Nav from '../Componants/nav/Nav'
-import Navbar from '../Componants/nav/NavTest/NavTest/Navbar'
-import { UserContext } from '../providers/UserProvider'
+// import { useContext } from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "../Componants/Footer/Footer";
+import Navbar from "../Componants/nav/NavTest/NavTest/Navbar";
+// import { UserContext } from "../providers/UserProvider";
 
+import React from "react";
 
+const Mainlayout = () => {
+	return (
+		<>
+			<Navbar />
+			<Outlet />
+			<Footer />
+		</>
+	);
+};
 
-export const Mainlayout = () => {
-  const { client, setClient  } = useContext(UserContext);
-
-  return (
-    <>
-    <p>{JSON.stringify(client)}</p>
-<Navbar/>
-
-
-<Outlet/>
-<Footer />
- </> )
-}
+export default Mainlayout;

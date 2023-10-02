@@ -50,9 +50,7 @@ export const Offres = () => {
 					<div className="footercard">
 						<a href="../DesCardSuis">
 							<h3>Maldives</h3>
-							{/* <p>Depart de marseille le 22/9/2023</p>
-          <p>7nuit/hôtel/pescine </p>
-          <p>699,99€</p> */}
+							
 						</a>
 					</div>
 				</article>
@@ -63,9 +61,7 @@ export const Offres = () => {
 					<img src="/sangapoure.jpg" alt="" />
 					<div className="footercard">
 						<h3>Singapour</h3>
-						{/* <p>Depart de marseille le 22/9/2023</p>
-        <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p> */}
+						
 					</div>
 				</article>
 				</Link>
@@ -76,9 +72,7 @@ export const Offres = () => {
 					<img src="/italie.png" alt="" />
 					<div className="footercard">
 						<h3>Italie</h3>
-						{/* <p>Depart de marseille le 22/9/2023</p>
-        <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p> */}
+						
 					</div>
 				</article>
 				</Link>
@@ -109,9 +103,7 @@ export const Offres = () => {
       <img src="/Andalousie2.png" alt="" />
       <div className="footercard">
         <h3>Indonésie</h3>
-        {/* <p>Depart de marseille le 22/9/2023</p>
-        <p>7nuit/hôtel/pescine </p>
-        <p>699,99€</p> */}
+      
         
       </div>
     </article>

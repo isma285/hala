@@ -1,10 +1,10 @@
 import React from 'react'
 import Sinscrire from '../../Componants/Sinscrire/Sinscrire'
 
-export const SinscrirePage = () => {
+const SinscrirePage = () => {
   return (
-    <>
-    <Sinscrire/>
-    </>
+    <Sinscrire />
   )
 }
+
+export default SinscrirePage
