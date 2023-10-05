@@ -13,8 +13,7 @@ const Destinations = () => {
 
   return <>
   	<section className="descreption-card">
-      {
-        destinations.map((values) => <article className="first-card" key={crypto.randomUUID()}>
+      {destinations.map((values) => <article className="first-card" key={crypto.randomUUID()}>
 				<img 
 					className="image" 
 					src={values.photo}

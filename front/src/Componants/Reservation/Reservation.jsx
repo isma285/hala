@@ -5,7 +5,7 @@ const Reservation = () => {
     <section>
     <form>
       <div className="email">
-        <h3>S'inscrire</h3>
+        <h3>Réservation</h3>
       
         <label for="name">Nom </label>
 

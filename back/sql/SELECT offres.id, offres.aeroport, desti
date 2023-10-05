@@ -1,0 +1,1 @@
+SELECT offres.id, offres.aeroport, destination.ville, destination.photo, destination.textdescription, FROM hala.offres JOIN hala.destination ON offres.destination_id = destination.id  WHERE destination.id = 2;

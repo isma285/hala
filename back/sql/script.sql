@@ -95,31 +95,54 @@ VALUES
 INSERT INTO hala.destination
 VALUES 
 -- thailande
-(NULL, 'Rome', 'thailande-maison.webp','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 2 ),
+(NULL, '
+Bangkok', 'thailandehotel.jpg','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 2 ),
+(NULL, 'Pattaya', 'thailande-maison.webp','. Pattaya est une célèbre station balnéaire située sur la côte est du golfe de Thaïlande, et elle est en effet une ville en Thaïlande. Merci pour la correction.', 2 ),
 
 -- maldive
-(NULL,'Santorin', 'thailandehotel.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'Maldives', 'maldives-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'Maldives', 'maldives-apart2.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 -- singapour
-(NULL,'Bali', 'dubai-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'singapour', 'singapour.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'singapour', 'singapour.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 
 -- italy
-(NULL,'Paris', 'thailandehotel.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'Rome', 'italie-hotel.jpg','Rome est la capitale de lItalie et lune des villes les plus célèbres et historiques du pays.', 2 ),
+(NULL,'Rome', 'italie-hotel.jpg','Rome est la capitale de lItalie et lune des villes les plus célèbres et historiques du pays.', 2 ),
 -- dubai
-(NULL,'Paris', 'grece-hotel.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'Dubai', 'dubai-apart.jpg','Dubai est connue pour son architecture moderne, ses gratte-ciel emblématiques, ses centres commerciaux luxueux, et ses attractions touristiques telles que le Burj Khalifa, la plus haute tour du monde.', 2 ),
+(NULL,'Dubai', 'dubai-apart2.jpg','Dubai est connue pour son architecture moderne, ses gratte-ciel emblématiques, ses centres commerciaux luxueux, et ses attractions touristiques telles que le Burj Khalifa, la plus haute tour du monde.', 2 ),
+(NULL,'Dubai', 'dubai-hotel.jpg','Dubai est connue pour son architecture moderne, ses gratte-ciel emblématiques, ses centres commerciaux luxueux, et ses attractions touristiques telles que le Burj Khalifa, la plus haute tour du monde.', 2 ),
 -- indonesie
-(NULL,'Paris', 'maldives-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 6 ),
+(NULL,'Bali', 'bali-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 6 ),
+(NULL,'Jakarta', 'bali-hotel.jpg','Jakarta est la capitale de lIndonésie et la plus grande ville du pays. Elle est située sur lîle de Java.', 6 ),
+
 -- grece
-(NULL,'Paris', 'maldives-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 1 )
+(NULL,'Santorin', 'grece-hotel.jpg','Santorin est célèbre pour ses superbes vues sur la mer, ses plages magnifiques, son architecture blanche emblématique et ses couchers de soleil spectaculaires.', 1 )
 ;
 
 INSERT INTO hala.offres
 VALUES 
-(NULL,'Roissy CDG ', '2023-11-10','2023-11-20', 875 , 1, 780, 1, 1),
+(NULL,'Roissy CDG ', '2023-11-10','2023-11-20', 675 , 1, 780, 1, 1),
 (NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
-(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 1),
-(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 1),
+
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 675 , 1, 780, 2, 2),
 (NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 2),
-(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3)
+
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 3),
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 3),
+
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 4),
+(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 4),
+
+(NULL,'Marseille', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 5),
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 5),
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 5),
+
+(NULL,'Marseille','2024-01-20','2024-01-30', 875 , 0, 875, 2, 6),
+(NULL,'Orly', '2023-11-10','2023-11-20', 875 , 1, 780, 2, 6),
+
+(NULL, 'Bauvais','2023-11-10','2023-11-20', 875 , 1, 780, 2, 7)
 
 ;
 

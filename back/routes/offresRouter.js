@@ -71,7 +71,7 @@ offresRouter.post("/create", async (req, res) => {
 });
 
 // modifier un offre
-offresRouter.put("update", async (req,res) =>{
+offresRouter.put("update", async (req, res) => {
 	// rêquete
 	const query = `
 	UPDATE hala.offres
@@ -81,7 +81,7 @@ offresRouter.put("update", async (req,res) =>{
 	offre.dateretour = :dateretour,
 	offre.prix = :prix,
 	offre.guide = :guide,
-	WHERE student.id = :id,
+	WHERE destination.id = :id,
 
 	`;
 
@@ -105,7 +105,7 @@ offresRouter.delete("/delete", async (req, res) => {
 	// requête
 	const query = `
 		DELETE FROM hala.offres
-		WHERE student.id = :id;
+		WHERE destination.id = :id;
 	`;
 	try {
 		const [results] = await dbConnection.execute(query, req.body);
@@ -122,14 +122,12 @@ offresRouter.delete("/delete", async (req, res) => {
 	}
 });
 
-
-
 offresRouter.get("/destination/:id", async (req, res) => {
 	// const { id } = req.params;
 
 	// requete sql a exécuter
 	const query = `
-		SELECT offres.*, destination.ville, destination.textdescription
+		SELECT offres.*, destination.ville, destination.photo, destination.textdescription,
 		FROM hala.offres
 		JOIN hala.destination
 		ON destination.id = offres.destination_id

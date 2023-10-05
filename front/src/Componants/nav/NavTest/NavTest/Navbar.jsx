@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	const [menu, setmenu] = useState("");
 	const { client, setClient } = useContext(ClientContext);
+
+	const [isOpen, setIsOpen] = useState(false);
+	const togglePopup = () => {
+		setIsOpen(!isOpen);
+	  };
 	return (
 		<div>
 			<nav className="navbar">
@@ -21,14 +26,16 @@ export const Navbar = () => {
 							Toutes les offres
 						</Link>
 					</li>
-					<li className="listnav">
+					{/* <li className="listnav">
 						<Link to="/promotions" className="lienbtn">
 							Promotions
 						</Link>
-					</li>
+					</li> */}
 					<li className="listnav">
-						<Link to="/contactezNs" className="lienbtn">
-							Contactez-nous
+						<Link to="/" className="lienbtn">
+				
+				
+							Contactez-nous 
 						</Link>
 					</li>
 					<li className="listnav">
@@ -55,6 +62,8 @@ export const Navbar = () => {
 					}}
 				/> 
         {/* <Link to={"/"}>Home</Link> */}
+
+
 			{/* {user ? (
 				<Link to={"/logout"}> Logout</Link>
 			) : (
@@ -64,6 +73,7 @@ export const Navbar = () => {
 				</>
 			)} */}
 			<Link to={"/admin"}> Admin</Link>
+			
 			</nav>
      
 		</div>
