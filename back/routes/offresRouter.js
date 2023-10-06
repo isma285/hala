@@ -6,19 +6,18 @@ const offresRouter = express.Router();
 offresRouter.get("/", async (req, res) => {
 	// requete sql a exécuter
 	const query = `
-	SELECT offres.*, typehebergement.tyhotelapart,destination.ville,destination.photo
-	FROM
-	 hala.offres
-	JOIN
-	 hala.typehebergement
-	ON
-	 offres.typehebergement_id = typehebergement.id
-	JOIN
-	 hala.destination
-	ON
-	 offres.destination_id = destination.id
-	
-	;
+	SELECT offres.*, typehebergement.tyhotelapart, destination.ville, destination.photo, destination.textdescription
+		FROM
+		hala.offres
+		JOIN
+		hala.typehebergement
+		ON
+		offres.typehebergement_id = typehebergement.id
+		JOIN
+		hala.destination
+		ON
+		offres.destination_id = destination.id
+		;
     `;
 
 	// exécuter la requete
@@ -127,7 +126,7 @@ offresRouter.get("/destination/:id", async (req, res) => {
 
 	// requete sql a exécuter
 	const query = `
-		SELECT offres.*, destination.ville, destination.photo, destination.textdescription,
+		SELECT offres.*, destination.*
 		FROM hala.offres
 		JOIN hala.destination
 		ON destination.id = offres.destination_id
@@ -141,6 +140,7 @@ offresRouter.get("/destination/:id", async (req, res) => {
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
+		console.log(results);
 		return res.status(200).json({
 			status: 200,
 			message: "OK",

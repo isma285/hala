@@ -1,7 +1,14 @@
 import express from "express";
 import dbConnection from "../services/dbConnection.js";
+import multer from "multer";
+import { getExtensionFromMimeType } from "../services/fileService.js";
 
 const destinationRouter = express.Router();
+
+const uploadDestination = "public/img";
+const uploader = multer({
+	dest: uploadDestination,
+});
 
 destinationRouter.get("/", async (req, res) => {
 	// requete sql a exécuter
@@ -41,7 +48,6 @@ destinationRouter.get("/", async (req, res) => {
 	}
 });
 
-
 destinationRouter.get("/:id", async (req, res) => {
 	// requete sql a exécuter
 	const { id } = req.params;
@@ -73,7 +79,12 @@ destinationRouter.get("/:id", async (req, res) => {
 	}
 });
 
-destinationRouter.post("/create", async (req, res) => {
+destinationRouter.post("/create", uploader.any(), async (req, res) => {
+	const photo = `${req.files[0].filename}.${getExtensionFromMimeType(
+		req.files[0].mimetype,
+	)}`;
+
+	console.log(req.body, req.files);
 	// requete sql a exécuter
 	const query = `
       
@@ -85,9 +96,15 @@ destinationRouter.post("/create", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.execute(query, {
+			...req.body,
+			photo: photo,
+		});
 		// console.log(results);
-
+		await fs.rename(
+			`${req.files[0].destination}${req.files[0].filename}`,
+			`${req.files[0].destination}${photo}`,
+		);
 		// renvoyer la reponse HTTP
 		return res.status(201).json({
 			status: 201,
@@ -97,10 +114,9 @@ destinationRouter.post("/create", async (req, res) => {
 		// renvoyer une erreur
 		return res.status(400).json({
 			status: 400,
-			message: "Error",
+			message: error,
 		});
 	}
 });
-
 
 export default destinationRouter;

@@ -76,7 +76,7 @@ const router = createBrowserRouter([
 		),
 		children: [
 			{
-				path: "",
+				path: ":id?",
 				element: <AdminHomePage />
 			},
 			// {

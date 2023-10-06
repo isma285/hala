@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./SeConnecter.css";
 import { useForm } from "react-hook-form";
-import { checkClinet } from "../../services/api";
+import { checkClient } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../../providers/UserProvider";
 
@@ -15,7 +15,7 @@ export const SeConnecter = () => {
 		register,
 	} = useForm();
 // import le contexte de l'utilisateur
-	const { clinet, setClient } = useContext(ClientContext);
+	const { client, setClient } = useContext(ClientContext);
 
 	const navigate = useNavigate();
 // affichage d'un message
@@ -25,7 +25,7 @@ export const SeConnecter = () => {
 	const onSubmit = async (values) => {
 	// appel de la route d'API créant un utilisateur
 	// console.log(values);
-		const responseAPI = await checkClinet(values);
+		const responseAPI = await checkClient(values);
 
 		// stoker l'utilisateur dans un context
 		// console.log(responseAPI);
@@ -33,7 +33,7 @@ export const SeConnecter = () => {
 		if (responseAPI.status === 200) {
 			setClient(responseAPI.data);
 			window.sessionStorage.setItem("notice", "You are login");
-			navigate("/");
+			navigate("/admin");
 		} else {
 			setMessage("vous n'êtes pas inscrit ");
 			setTimeout(() => setMessage(), 5000);

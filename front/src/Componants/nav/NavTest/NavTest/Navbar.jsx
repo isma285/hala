@@ -72,7 +72,7 @@ export const Navbar = () => {
 					<Link to={"/connexion"}> Login</Link>
 				</>
 			)} */}
-			<Link to={"/admin"}> Admin</Link>
+			{/* <Link to={"/admin"}> Admin</Link> */}
 			
 			</nav>
      

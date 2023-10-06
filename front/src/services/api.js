@@ -1,6 +1,6 @@
 const getDestinations = async () => {
 	// configurer la requête HTTP
-	const requestInfos = new Request("http://localhost:3000/destinations", {
+	const requestInfos = new Request("http://localhost:3000/destination", {
 		method: "get",
 	});
 
@@ -15,9 +15,12 @@ const getDestinations = async () => {
 };
 const getOffresByDestinations = async (id) => {
 	// configurer la requête HTTP
-	const requestInfos = new Request(`http://localhost:3000/offres/destination/${id}`, {
-		method: "get",
-	});
+	const requestInfos = new Request(
+		`http://localhost:3000/offres/destination/${id}`,
+		{
+			method: "get",
+		},
+	);
 
 	// exucuter la requete HTTP
 	const request = await fetch(requestInfos);
@@ -42,7 +45,23 @@ const createUser = async (values) => {
 	return response;
 };
 
-const checkClinet = async (values) => {
+const createDestination = async (values) => {
+	console.log(values);
+	const requestInfos = new Request("http://localhost:3000/destination/create", {
+		method: "post",
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(values),
+		body: values,
+	});
+	console.log(requestInfos);
+	const request = await fetch(requestInfos);
+	const response = await request.json();
+	return response;
+};
+
+const checkClient = async (values) => {
 	const requestInfos = new Request("http://localhost:3000/client/login", {
 		method: "post",
 		headers: {
@@ -55,8 +74,10 @@ const checkClinet = async (values) => {
 	return response;
 };
 
-
-
-
-
-export {getDestinations, checkClinet, createUser, getOffresByDestinations};
+export {
+	getDestinations,
+	checkClient,
+	createUser,
+	getOffresByDestinations,
+	createDestination,
+};

@@ -2,17 +2,17 @@
 -- FROM hala.client;
 
 -- 01: selectioner toutes les offres jointure typehebergement / destination
-SELECT offres.*, typehebergement.tyhotelapart, destination.ville, destination.photo, destination.textdescription
-FROM
- hala.offres
-JOIN
- hala.typehebergement
-ON
- offres.typehebergement_id = typehebergement.id
-JOIN
- hala.destination
-ON
- offres.destination_id = destination.id
+-- SELECT offres.*, typehebergement.tyhotelapart, destination.ville, destination.photo, destination.textdescription
+-- FROM
+--  hala.offres
+-- JOIN
+--  hala.typehebergement
+-- ON
+--  offres.typehebergement_id = typehebergement.id
+-- JOIN
+--  hala.destination
+-- ON
+--  offres.destination_id = destination.id
 -- WHERE 
 --     typehebergement.tyhotelapart = "Hôtel"
 ;
@@ -62,4 +62,8 @@ ON
 -- WHERE destination.id = 2;
 
 
- 
+ SELECT offres.*, destination.*
+		FROM hala.offres
+		JOIN hala.destination
+		ON destination.id = offres.destination_id
+		WHERE destination.id = 1;

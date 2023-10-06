@@ -13,20 +13,19 @@ function DesCard() {
 	// éxucuter la requete HTTP au premier affichage du composant
 	useEffect(() => {
 		// récuperer les destinations à partir  de l'API
-		getOffresByDestinations(id).then((values) => setOffres(values.data));
+		getOffresByDestinations(id).then((values) => {
+			setOffres(values.data);
+			console.log(values);
+		});
 
-		getDestinations().then((values) => setDestinations(values.data));
+		// getDestinations().then((values) => setDestinations(values.data));
 	}, []);
 
 	return (
 		<section className="descreption-card">
 			{offres.map((values) => (
 				<article className="first-card">
-					<img 
-					className="image" 
-					src={values.photo}
-					alt=""
-					 />
+					<img className="image" src={`/${values.photo}`} alt="" />
 					<div className="text-descreption">
 						<p>{values.textdescription}</p>
 					</div>
@@ -41,7 +40,6 @@ function DesCard() {
 							</li>
 							<li>jusqu'à {values.dateretour} </li>
 							<li>Prix: {values.prix}</li>
-						
 
 							<li>
 								<Link to={"/reservation"} className="reservation">

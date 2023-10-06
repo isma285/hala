@@ -25,8 +25,10 @@ router.use(
 	}),
 );
 
+router.use(express.static('public'));
 
-router.use("/destinations", destinationRouter);
+
+router.use("/destination", destinationRouter);
 
 router.use("/offres", offresRouter);
 

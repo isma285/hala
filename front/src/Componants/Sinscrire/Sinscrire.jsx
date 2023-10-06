@@ -2,7 +2,6 @@ import "../SeConecter/SeConnecter.css";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { createUser } from "../../services/api";
 
 export const Sinscrire = () => {
