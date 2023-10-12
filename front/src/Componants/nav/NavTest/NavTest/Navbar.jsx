@@ -32,9 +32,9 @@ export const Navbar = () => {
 						</Link>
 					</li> */}
 					<li className="listnav">
-						<Link to="/" className="lienbtn">
+						<Link to={"/"}className="lienbtn">
 				
-				
+				<link to="tel:0121212122 " title=""></link>
 							Contactez-nous 
 						</Link>
 					</li>

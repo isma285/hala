@@ -14,6 +14,8 @@ import AdminLayout from "../layout/AdminLayout";
 import LoginPage from "../pages/Laconexcion/LoginPage";
 import Mainlayout from "../layout/Mainlayout";
 import AdminHomePage from "../pages/admin/AdminHomePage";
+// import ContactezNous from "../Componants/ContactezNous/ContactezNous";
+
 
 const router = createBrowserRouter([
 	{
@@ -46,7 +48,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "contactezNs",
-				element: <ContactezNs />,
+				element: <ContactezNs/>,
 			},
 			{
 				path: "logout",

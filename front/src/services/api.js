@@ -74,6 +74,21 @@ const checkClient = async (values) => {
 	return response;
 };
 
+
+const updateDestination = async (values) => {
+	const requestInfos = new Request("http://localhost:3000/destination/update", {
+		method: "put",
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(values),
+		body: values,
+	});
+	const request = await fetch(requestInfos);
+	const response = await request.json();
+	return response;
+};
+
 export {
 	getDestinations,
 	checkClient,

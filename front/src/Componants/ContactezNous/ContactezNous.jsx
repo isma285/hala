@@ -1,26 +1,18 @@
-import React, { useState } from 'react';
-import "./ContactezNous.css"
-const Popup = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// import React from 'react';
+// import './ContactezNous.css'; // Importez votre fichier de styles CSS
 
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
+// const PopupWhatsApp = () => {
+//   const openWhatsAppChat = () => {
+//     const phoneNumber = 'VOTRE_NUMERO_DE_TELEPHONE';
+//     const whatsappUrl = `https://wa.me/${phoneNumber}`;
+//     window.open(whatsappUrl, '_blank');
+//   };
 
-  return (<>
-    <div>
-      <button onClick={togglePopup}>Contactez-nous</button>
-      {isOpen && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>Numéro de téléphone : +123456789</h2>
-            <button onClick={togglePopup}>Fermer</button>
-          </div>
-        </div>
-      )}
-    </div>
-    </>
-  );
-};
+//   return (
+//     <div className="popup-whatsapp-container">
+//       <button onClick={openWhatsAppChat}>Nous Contacter sur WhatsApp</button>
+//     </div>
+//   );
+// };
 
-export default Popup;
+// export default PopupWhatsApp;

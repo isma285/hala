@@ -12,6 +12,7 @@ const AdminDestinationForm = () => {
 	// photo VARCHAR (50) NOT NULL,
 	// textdescription VARCHAR (500),
 	// tendance BOOLEAN NOT NULL
+	const { id } = useParams();
 	const {
 		formState: { errors },
 		handleSubmit,
@@ -19,7 +20,6 @@ const AdminDestinationForm = () => {
 		watch,
 		reset,
 	} = useForm();
-	const { id } = useParams();
 
     const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const AdminDestinationForm = () => {
 
 		// appel de la route d'API
 		const responseAPI = id
-			? await updateStudent(values)
+			? await updateDestination(formData)
 			//   null
 			: await createDestination(formData);
 
