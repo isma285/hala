@@ -3,6 +3,7 @@ import "./Navbar.css";
 import React from "react";
 import { ClientContext } from "../../../../providers/UserProvider";
 import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown";
 
 export const Navbar = () => {
 	const [menu, setmenu] = useState("");
@@ -34,8 +35,8 @@ export const Navbar = () => {
 					<li className="listnav">
 						<Link to={"/"}className="lienbtn">
 				
-				<link to="tel:0121212122 " title=""></link>
-							Contactez-nous 
+				<Dropdown/>
+							{/* Contactez-nous  */}
 						</Link>
 					</li>
 					<li className="listnav">
