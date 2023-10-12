@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Promotions from "../pages/Promotions";
 import Destinations from "../pages/Destinations";
@@ -14,8 +14,10 @@ import AdminLayout from "../layout/AdminLayout";
 import LoginPage from "../pages/Laconexcion/LoginPage";
 import Mainlayout from "../layout/Mainlayout";
 import AdminHomePage from "../pages/admin/AdminHomePage";
+import AdminDestinations from "../pages/admin/destinations/AdminDestinationsPage";
+import AdminDestinationsPage from "../pages/admin/destinations/AdminDestinationsPage";
+import AdminDestinationFormrPage from "../pages/admin/destinations/AdminDestinationFormrPage";
 // import ContactezNous from "../Componants/ContactezNous/ContactezNous";
-
 
 const router = createBrowserRouter([
 	{
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
 				element: <Destinations />,
 			},
 			{
-				path: "promotions", 
+				path: "promotions",
 				element: <Promotions />,
 			},
 			{
@@ -48,11 +50,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "contactezNs",
-				element: <ContactezNs/>,
+				element: <ContactezNs />,
 			},
 			{
 				path: "logout",
-				element: <LogoutPage/>,
+				element: <LogoutPage />,
 			},
 			{
 				path: "reservation",
@@ -66,7 +68,6 @@ const router = createBrowserRouter([
 				path: "test",
 				element: <TestPage />,
 			},
-		
 		],
 	},
 	{
@@ -78,8 +79,16 @@ const router = createBrowserRouter([
 		),
 		children: [
 			{
-				path: ":id?",
-				element: <AdminHomePage />
+				path: "",
+				element: <AdminHomePage />,
+			},
+			{
+				path: "destination/:id?",
+				element: <AdminDestinationsPage />,
+			},
+			{
+				path: "destination/:id?/form",
+				element: <AdminDestinationFormrPage />,
 			},
 			// {
 			// 	path: "students/:id?",
@@ -91,8 +100,6 @@ const router = createBrowserRouter([
 			// },
 		],
 	},
-
-
 ]);
 
 export default router;

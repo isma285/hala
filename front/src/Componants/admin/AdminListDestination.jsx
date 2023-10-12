@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { deleteStudent, getStudents } from "../../services/api.js";
+import { getAllDestinations } from "../../services/api.js";
+import "./AdminDestination.css";
 
-const AdminListStudents = () => {
+const AdminListDestination = () => {
 	// état pour rafraîchir le composant après la suppression d'un élève
 	const [forceUpdate, setForceUpdate] = useState(false);
 
 	// état pour stocker les données de l'API
-	const [students, setStudents] = useState([]);
+	const [destinations, setDestinations] = useState([]);
 
 	// état pour stocker la notification contenue dans la sessionStorage
 	const [message, setMessage] = useState();
@@ -15,7 +16,8 @@ const AdminListStudents = () => {
 	// exécuter la requête HTTP au premier affichage du composant
 	useEffect(() => {
 		// récupérer les étudiants à partir de l'API
-		getStudents().then((values) => setStudents(values.data));
+		getAllDestinations().then((values) => setDestinations(values.data));
+		// console.log(values.data);
 	}, [forceUpdate]);
 
 	// récupérer la notification du sessionStorage
@@ -36,43 +38,43 @@ const AdminListStudents = () => {
 	// supprimer un élève
 	const handleClick = async (id) => {
 		// console.log(id);
-		const responseAPI = await deleteStudent(id);
-
-		if (responseAPI.status === 200) {
-			window.sessionStorage.setItem("notice", "Student deleted");
-		} else {
-			window.sessionStorage.setItem("notice", "Error");
-		}
-
-		setForceUpdate(!forceUpdate);
+		// const responseAPI = await deleteStudent(id);
+		// if (responseAPI.status === 200) {
+		// 	window.sessionStorage.setItem("notice", "Student deleted");
+		// } else {
+		// 	window.sessionStorage.setItem("notice", "Error");
+		// }
+		// setForceUpdate(!forceUpdate);
 	};
 
 	return (
 		<>
 			<p>{message}</p>
 			<p>
-				<Link to={"/admin/students/form"}>Add</Link>
+				<Link to={"/admin/destination/form"}>Add</Link>
 			</p>
-			<table>
+			<table className="table">
 				<thead>
-					<tr>
-						<td>Name</td>
-						<td>Age</td>
-						<td>Birthday</td>
-						<td>Is external</td>
-						<td>Classroom id</td>
-						<td> </td>
+					<tr className="tr">
+						<td className="td">Id</td>
+						<td className="td">Ville</td>
+						<td className="td">photo</td>
+						<td className="td">Description</td>
+						<td className="td">Tandance</td>
+						<td className="td"> </td>
 					</tr>
 				</thead>
 				<tbody>
-					{students.map((value) => (
+					{destinations.map((value) => (
 						<tr key={crypto.randomUUID()}>
-							<td>{`${value.firstname} ${value.lastname}`}</td>
-							<td>{value.age}</td>
-							<td>{new Date(value.birthday).toLocaleDateString()}</td>
-							<td>{value.isExternal}</td>
-							<td>{value.classroom_id}</td>
-							<td>
+							<td className="td">{value.id}</td>
+							<td className="td">{value.ville}</td>
+
+							<td className="td">{value.photo}</td>
+							<td className="td">{value.textdescription}</td>
+							<td className="td">{value.tendance}</td>
+
+							<td className="td">
 								<Link to={`/admin/students/${value.id}/form`}>Edit</Link>
 								<Link onClick={() => handleClick(value.id)}> Delete</Link>
 							</td>
@@ -84,4 +86,4 @@ const AdminListStudents = () => {
 	);
 };
 
-export default AdminListStudents;
+export default AdminListDestination;

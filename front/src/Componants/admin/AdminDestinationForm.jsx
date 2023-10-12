@@ -4,8 +4,6 @@ import { createDestination } from "../../services/api.js";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-
-
 const AdminDestinationForm = () => {
 	// id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	// ville VARCHAR (50) NOT NULL,
@@ -21,7 +19,7 @@ const AdminDestinationForm = () => {
 		reset,
 	} = useForm();
 
-    const navigate = useNavigate();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const observer = watch((values) => console.log(values));
@@ -41,8 +39,8 @@ const AdminDestinationForm = () => {
 
 		// appel de la route d'API
 		const responseAPI = id
-			? await updateDestination(formData)
-			//   null
+			? // ? await updateDestination(formData)
+			  console.log("update")
 			: await createDestination(formData);
 
 		if (responseAPI.status === 200) {

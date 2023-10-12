@@ -1,8 +1,9 @@
 import express from "express";
 import dbConnection from "../services/dbConnection.js";
 import multer from "multer";
-import getExtensionFromMimeType  from "../services/fileService.js";
+import getExtensionFromMimeType from "../services/fileService.js";
 import { getDestinationById } from "../services/api.js";
+import fs from "node:fs/promises";
 
 const destinationRouter = express.Router();
 
@@ -25,6 +26,36 @@ destinationRouter.get("/", async (req, res) => {
 		hala.destination
 		ON
 		offres.destination_id = destination.id
+		;
+    `;
+
+	// exécuter la requete
+	try {
+		// récuperer les resultats de la requete
+		const [results] = await dbConnection.execute(query);
+		// console.log(results);
+
+		// renvoyer la reponse HTTP
+		return res.status(200).json({
+			status: 200,
+			message: "ok",
+			data: results,
+		});
+	} catch (error) {
+		// renvoyer une erreur
+		return res.status(400).json({
+			status: 400,
+			message: "Error",
+		});
+	}
+});
+
+destinationRouter.get("/all", async (req, res) => {
+	// requete sql a exécuter
+	const query = `
+		SELECT destination.*
+		FROM
+		hala.destination
 		;
     `;
 

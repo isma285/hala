@@ -13,6 +13,22 @@ const getDestinations = async () => {
 	// renvoyer la reponse
 	return response;
 };
+
+const getAllDestinations = async () => {
+	// configurer la requête HTTP
+	const requestInfos = new Request("http://localhost:3000/destination/all", {
+		method: "get",
+	});
+
+	// exucuter la requete HTTP
+	const request = await fetch(requestInfos);
+
+	// recupere la requete HTTP
+	const response = await request.json();
+
+	// renvoyer la reponse
+	return response;
+};
 const getOffresByDestinations = async (id) => {
 	// configurer la requête HTTP
 	const requestInfos = new Request(
@@ -74,7 +90,6 @@ const checkClient = async (values) => {
 	return response;
 };
 
-
 const updateDestination = async (values) => {
 	const requestInfos = new Request("http://localhost:3000/destination/update", {
 		method: "put",
@@ -95,4 +110,5 @@ export {
 	createUser,
 	getOffresByDestinations,
 	createDestination,
+	getAllDestinations,
 };
