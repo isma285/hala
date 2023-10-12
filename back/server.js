@@ -1,14 +1,12 @@
 // import des dépendances
 import express from "express";
 import http from "node:http";
-import dbConnection from "./services/dbConnection.js";
 import destinationRouter from "./routes/destinationRouter.js";
 import cors from "cors";
 import offresRouter from "./routes/offresRouter.js";
 import clientRouter from "./routes/clientRouter.js";
 import typehebergementRouter from "./routes/typehebergementRouter.js";
 import adminRouter from "./routes/adminRouter.js";
-
 const app = express();
 
 // création d'un routeur

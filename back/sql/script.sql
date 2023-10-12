@@ -79,7 +79,7 @@ VALUES
 ( NULL, 'fekih','Abdel','abdel@gmail.com','$argon2i$v=19$m=16,t=2,p=1$bFZ4U1kzNlBtbjJQM2cwQQ$1WPFdUIejNIseo60AQXYiQ',2),
 ( NULL, 'lokmane','m','lok@gmail.com','lokmane',2)
 ;
--- isma
+
 -- abdel
 
 
@@ -95,15 +95,14 @@ VALUES
 INSERT INTO hala.destination
 VALUES 
 -- thailande
-(NULL, '
-Bangkok', 'thailandehotel.jpg','Si vous vous demandez pourquoi Rome est lune des villes les plus romantiques du monde, il nous faut bien sûr évoquer la légende entourant lun de ses monuments les plus emblématiques, la Fontaine de Trevi. Avec ses 26 mètres de haut, cet édifice monumental est la plus haute fontaine de la ville.', 2 ),
+(NULL, 'Bangkok', 'thailande-maison.webp','Bangkok est une célèbre station balnéaire située sur la côte est du golfe de Thaïlande, et elle est en effet une ville en Thaïlande. Merci pour la correction.', 2 ),
 -- (NULL, 'Pattaya', 'thailande-maison.webp','. Pattaya est une célèbre station balnéaire située sur la côte est du golfe de Thaïlande, et elle est en effet une ville en Thaïlande. Merci pour la correction.', 2 ),
 
 -- maldive
 (NULL,'Maldives', 'maldives-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 -- (NULL,'Maldives', 'maldives-apart2.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 -- singapour
-(NULL,'singapour', 'singapour.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
+(NULL,'singapour', 'singapour-hotel.jpg','Singapour est une ville-État insulaire dAsie du Sud-Est, connue pour son impressionnante modernité, sa cuisine variée et ses magnifiques espaces verts.', 2 ),
 -- (NULL,'singapour', 'singapour.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 2 ),
 
 -- italy
@@ -114,8 +113,9 @@ Bangkok', 'thailandehotel.jpg','Si vous vous demandez pourquoi Rome est lune des
 -- (NULL,'Dubai', 'dubai-apart2.jpg','Dubai est connue pour son architecture moderne, ses gratte-ciel emblématiques, ses centres commerciaux luxueux, et ses attractions touristiques telles que le Burj Khalifa, la plus haute tour du monde.', 2 ),
 -- (NULL,'Dubai', 'dubai-hotel.jpg','Dubai est connue pour son architecture moderne, ses gratte-ciel emblématiques, ses centres commerciaux luxueux, et ses attractions touristiques telles que le Burj Khalifa, la plus haute tour du monde.', 2 ),
 -- indonesie
-(NULL,'Bali', 'bali-apart.jpg','Avec ses plages de sable blanc, ses magnifiques couchers de soleil et ses hôtels de luxe, lîle de santorin vous garantit des vacances inoubliables', 6 ),
--- (NULL,'Jakarta', 'bali-hotel.jpg','Jakarta est la capitale de lIndonésie et la plus grande ville du pays. Elle est située sur lîle de Java.', 6 ),
+(NULL,'Bali', 'bali-hotel.jpg','
+Bali est une île paradisiaque en Indonésie, réputée pour ses plages spectaculaires, sa culture riche et ses rituels spirituels uniques.', 6 ),
+
 
 -- grece
 (NULL,'Santorin', 'grece-hotel.jpg','Santorin est célèbre pour ses superbes vues sur la mer, ses plages magnifiques, son architecture blanche emblématique et ses couchers de soleil spectaculaires.', 1 )

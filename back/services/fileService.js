@@ -11,4 +11,4 @@ const getExtensionFromMimeType = (mimeType) => {
 	return extensions[mimeType];
 };
 
-export { getExtensionFromMimeType };
+export default getExtensionFromMimeType ;
