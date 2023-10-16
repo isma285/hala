@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
 	return (
@@ -7,7 +8,9 @@ export default function Footer() {
 				<div >
 					<h3> A Propos</h3>
 					<li>
-						<a href="#">À propos de nous</a>
+						<Link to={"/Apropos"}>
+							
+							À propos de nous</Link>
 					</li>
 					<li>
 						<a href="#">Politique de confidentialité</a>

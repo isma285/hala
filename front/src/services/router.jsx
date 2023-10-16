@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import Promotions from "../pages/Promotions";
+
 import Destinations from "../pages/Destinations";
 import Connexion from "../pages/Connexion";
 import DescriptionCard from "../pages/DescriptionCard";
@@ -17,6 +17,7 @@ import AdminHomePage from "../pages/admin/AdminHomePage";
 import AdminDestinations from "../pages/admin/destinations/AdminDestinationsPage";
 import AdminDestinationsPage from "../pages/admin/destinations/AdminDestinationsPage";
 import AdminDestinationFormrPage from "../pages/admin/destinations/AdminDestinationFormrPage";
+import Apropos from "../Componants/Footer/Apropos";
 // import ContactezNous from "../Componants/ContactezNous/ContactezNous";
 
 const router = createBrowserRouter([
@@ -31,10 +32,6 @@ const router = createBrowserRouter([
 			{
 				path: "destinations",
 				element: <Destinations />,
-			},
-			{
-				path: "promotions",
-				element: <Promotions />,
 			},
 			{
 				path: "connexion",
@@ -67,6 +64,10 @@ const router = createBrowserRouter([
 			{
 				path: "test",
 				element: <TestPage />,
+			},
+			{
+				path: "Apropos",
+				element: <Apropos />,
 			},
 		],
 	},

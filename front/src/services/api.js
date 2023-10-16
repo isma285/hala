@@ -104,6 +104,15 @@ const updateDestination = async (values) => {
 	return response;
 };
 
+const deleteDestination = async (id) => {
+	const requestInfos = new Request(`http://localhost:3000/destination/delete/${id}`, {
+		method: "delete",
+	});
+	const request = await fetch(requestInfos);
+	const response = await request.json();
+	return response;
+};
+
 export {
 	getDestinations,
 	checkClient,
@@ -111,4 +120,6 @@ export {
 	getOffresByDestinations,
 	createDestination,
 	getAllDestinations,
+	deleteDestination,
+	updateDestination,
 };

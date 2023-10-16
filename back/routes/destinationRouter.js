@@ -228,4 +228,42 @@ destinationRouter.put("/update", uploader.any(), async (req, res) => {
 	}
 });
 
+// supprimer un étudiant
+destinationRouter.delete("/delete/:id", async (req, res) => {
+	// récupérer les informations dans la base de données pour connaître l'image à supprimer
+	// const { id } = req.body;
+	// const destination = await getDestinationById(id);
+
+	// requête
+	const query = `
+		DELETE FROM hala.destination
+		WHERE destination.id = :id;
+	`;
+
+	/*
+		la valeur de la variable id de la requête SQL est définie dans un objet JS dont les propriétés reprennent les noms des variables SQL
+			variable SQL :id > { id: ... }
+			variable SQL :name et :id > { name: ..., id: ... }
+	*/
+
+	try {
+		const [results] = await dbConnection.execute(query, req.params);
+
+		// supprimer l'image
+		// await fs.rm(`${uploadDirectory}${destination.photo}`);
+
+		return res.status(200).json({
+			status: 200,
+			message: "OK",
+			data:results,
+		});
+	} catch (error) {
+		// renvoyer une erreur
+		return res.status(400).json({
+			status: 400,
+			message: "Error",
+		});
+	}
+});
+
 export default destinationRouter;

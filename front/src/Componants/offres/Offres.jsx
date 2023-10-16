@@ -33,7 +33,7 @@ export const Offres = () => {
 				
 				<Link to={"/offres/pays/1"}>
 					<article className="card">
-						<img src="/Tailande.jpg" alt="" />
+						<img className="photo" src="/Tailande.jpg" alt="" />
 
 						<div className="footercard">
 							<h3>Thaïlande</h3>
@@ -45,7 +45,7 @@ export const Offres = () => {
 				<Link to={"/offres/pays/2"}>
 				<article className="card">
 
-						<img src="/maldives2.png" alt="" />
+						<img className="photo" src="/maldives2.png" alt="" />
 					
 					<div className="footercard">
 						<a href="../DesCardSuis">
@@ -58,7 +58,7 @@ export const Offres = () => {
 				<Link to={"/offres/pays/3"}>
 				<article className="card">
 					
-					<img src="/sangapoure.jpg" alt="" />
+					<img className="photo" src="/sangapoure.jpg" alt="" />
 					<div className="footercard">
 						<h3>Singapour</h3>
 						
@@ -69,7 +69,7 @@ export const Offres = () => {
 				<Link to={"/offres/pays/4"}>
 				<article className="card">
 					
-					<img src="/italie.png" alt="" />
+					<img className="photo" src="/italie.png" alt="" />
 					<div className="footercard">
 						<h3>Italie</h3>
 						
@@ -86,7 +86,7 @@ export const Offres = () => {
 
     <article className="card">
       
-        <img src="/Dubai.png" alt=""/>
+        <img className="photo" src="/Dubai.png" alt=""/>
      
       <div className="footercard">
         
@@ -100,7 +100,7 @@ export const Offres = () => {
     </Link>
 	<Link to={"/offres/pays/6"}>
 	<article className="card">
-      <img src="/Andalousie2.png" alt="" />
+      <img className="photo" src="/Andalousie2.png" alt="" />
       <div className="footercard">
         <h3>Indonésie</h3>
       
@@ -111,7 +111,7 @@ export const Offres = () => {
 	<Link to={"/offres/pays/7"}>
 
 	<article className="card">
-      <img src="/Grèce.png" alt="" />
+      <img className="photo" src="/Grèce.png" alt="" />
       <div className="footercard">
         <h3>Grèce</h3>
         {/* <p>Depart de marseille le 22/9/2023</p>

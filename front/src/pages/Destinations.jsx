@@ -30,9 +30,9 @@ const Destinations = () => {
 						<li>
 							<h3> {values.ville}</h3>
 						</li>
-						<li>De {values.aeroport} le {values.datedepart}</li>
-						<li>jusqu'à {values.dateretour} </li>
-						<li>Prix: {values.prix}</li>
+						<li>De {values.aeroport} le {new Date(values.datedepart).toLocaleDateString('fr-FR')}</li>
+						<li>jusqu'à {new Date(values.dateretour).toLocaleDateString('fr-FR')}</li>
+						<li>Prix: {values.prix}€</li>
 						<li>{values.typehebergement_id}</li>
 
 						

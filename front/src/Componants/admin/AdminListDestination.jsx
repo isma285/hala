@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getAllDestinations } from "../../services/api.js";
+import { deleteDestination, getAllDestinations } from "../../services/api.js";
 import "./AdminDestination.css";
 
 const AdminListDestination = () => {
@@ -38,13 +38,13 @@ const AdminListDestination = () => {
 	// supprimer un élève
 	const handleClick = async (id) => {
 		// console.log(id);
-		// const responseAPI = await deleteStudent(id);
-		// if (responseAPI.status === 200) {
-		// 	window.sessionStorage.setItem("notice", "Student deleted");
-		// } else {
-		// 	window.sessionStorage.setItem("notice", "Error");
-		// }
-		// setForceUpdate(!forceUpdate);
+		const responseAPI = await deleteDestination(id);
+		if (responseAPI.status === 200) {
+			window.sessionStorage.setItem("notice", "Destination supprimée");
+		} else {
+			window.sessionStorage.setItem("notice", "Erreur");
+		}
+		setForceUpdate(!forceUpdate);
 	};
 
 	return (
@@ -60,7 +60,7 @@ const AdminListDestination = () => {
 						<td className="td">Ville</td>
 						<td className="td">photo</td>
 						<td className="td">Description</td>
-						<td className="td">Tandance</td>
+						<td className="td">Tendance</td>
 						<td className="td"> </td>
 					</tr>
 				</thead>
@@ -75,8 +75,9 @@ const AdminListDestination = () => {
 							<td className="td">{value.tendance}</td>
 
 							<td className="td">
-								<Link to={`/admin/students/${value.id}/form`}>Edit</Link>
+								<Link to={`/admin/destination/${value.id}/form`}>Edit</Link>
 								<Link onClick={() => handleClick(value.id)}> Delete</Link>
+								
 							</td>
 						</tr>
 					))}
