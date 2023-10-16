@@ -1,16 +1,17 @@
 import { useForm } from "react-hook-form";
 import { v4 as uuid } from "uuid";
-import { createDestination } from "../../services/api.js";
+import {
+	createDestination,
+	getDestinationById,
+	getDestinations,
+	updateDestination,
+} from "../../services/api.js";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const AdminDestinationForm = () => {
-	// id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-	// ville VARCHAR (50) NOT NULL,
-	// photo VARCHAR (50) NOT NULL,
-	// textdescription VARCHAR (500),
-	// tendance BOOLEAN NOT NULL
 	const { id } = useParams();
+	const [destination, setDestination] = useState([]);
 	const {
 		formState: { errors },
 		handleSubmit,
@@ -28,6 +29,31 @@ const AdminDestinationForm = () => {
 		return () => observer.unsubscribe();
 	}, [watch]);
 
+	useEffect(() => {
+		const allPromises = Promise.allSettled([getDestinations()]);
+
+		allPromises.then((results) => {
+			setDestination(results[0].value.data);
+		});
+
+		prefillForm();
+	}, []);
+	const prefillForm = async () => {
+		if (id) {
+			// console.log(id);
+			const responseAPI = await getDestinationById(id);
+			const destination = responseAPI.data[0];
+			console.log("vvvvvvvvvvvvvvv", destination.photo);
+			reset({
+				id: destination.id,
+				ville: destination.ville,
+				photo: destination.photo,
+				textdescription: destination.textdescription,
+				tendance: `${destination.tendance}`,
+			});
+		}
+	};
+
 	// soumission du formulaire
 	const onSubmit = async (values) => {
 		const formData = new FormData();
@@ -39,8 +65,8 @@ const AdminDestinationForm = () => {
 
 		// appel de la route d'API
 		const responseAPI = id
-			? // ? await updateDestination(formData)
-			  console.log("update")
+			? //
+			  await updateDestination(formData)
 			: await createDestination(formData);
 
 		if (responseAPI.status === 200) {
@@ -68,7 +94,7 @@ const AdminDestinationForm = () => {
 				<label>Photo :</label>
 				<input
 					type="file"
-					{...register("photo", { required: "Photo is required" })}
+					{...register("photo", id ?{}: { required: "Photo is required" })}
 				/>
 				<small>{errors.photo?.message}</small>
 			</p>

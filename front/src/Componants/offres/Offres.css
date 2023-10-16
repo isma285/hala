@@ -27,10 +27,10 @@
     border-radius:0 50px 0 0;
   
 }
-img:hover{
+/* img:hover{
    
         transform: scale(1.1)
-    }
+    } */
 .footercard{
     display: flex;
     flex-direction: column;

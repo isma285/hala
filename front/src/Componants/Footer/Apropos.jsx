@@ -1,8 +1,9 @@
 import React from 'react'
-import './Footer.css'
+import "./Apropos.css"
 const Apropos = () => {
   return (
     <>
+    <article className='article'>
     <h2>À Propos de Hala Voyages</h2>
     
     <p>Bienvenue chez Hala Voyages, l'agence de voyage qui transcende les frontières pour vous offrir des expériences de voyage inoubliables. Depuis notre fondation, nous avons eu le privilège de transformer les rêves de voyages en réalité pour des milliers de voyageurs avides d'aventure et de découverte.</p>
@@ -14,6 +15,7 @@ const Apropos = () => {
     
 <h4>
     Prêt à explorer le monde avec nous? Contactez-nous dès aujourd'hui et laissez-nous créer le voyage de vos rêves.</h4>
+    </article>
     </>
   )
 }

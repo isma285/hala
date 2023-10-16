@@ -29,6 +29,23 @@ const getAllDestinations = async () => {
 	// renvoyer la reponse
 	return response;
 };
+
+const getDestinationById = async (id) => {
+	// configurer la requête HTTP
+	const requestInfos = new Request(`http://localhost:3000/destination/${id}`, {
+		method: "get",
+	});
+
+	// exucuter la requete HTTP
+	const request = await fetch(requestInfos);
+
+	// recupere la requete HTTP
+	const response = await request.json();
+
+	// renvoyer la reponse
+	return response;
+};
+
 const getOffresByDestinations = async (id) => {
 	// configurer la requête HTTP
 	const requestInfos = new Request(
@@ -91,6 +108,7 @@ const checkClient = async (values) => {
 };
 
 const updateDestination = async (values) => {
+	console.log(values);
 	const requestInfos = new Request("http://localhost:3000/destination/update", {
 		method: "put",
 		// headers: {
@@ -101,19 +119,24 @@ const updateDestination = async (values) => {
 	});
 	const request = await fetch(requestInfos);
 	const response = await request.json();
+	console.log(response);
 	return response;
 };
 
 const deleteDestination = async (id) => {
-	const requestInfos = new Request(`http://localhost:3000/destination/delete/${id}`, {
-		method: "delete",
-	});
+	const requestInfos = new Request(
+		`http://localhost:3000/destination/delete/${id}`,
+		{
+			method: "delete",
+		},
+	);
 	const request = await fetch(requestInfos);
 	const response = await request.json();
 	return response;
 };
 
 export {
+	getDestinationById,
 	getDestinations,
 	checkClient,
 	createUser,

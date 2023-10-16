@@ -11,6 +11,15 @@ const uploadDestination = "public/img";
 const uploader = multer({
 	dest: uploadDestination,
 });
+// exécuter une requête sur le serveur mysql
+/*
+	le nom d'une table SQL devient une route
+		- par ex. avec une table student
+			GET : /destination > renvoyer tous les destinations
+			POST : /destination > créer une destination
+			PUT : /destination/IDENTIFIANT > modifier une destination
+			DELETE : /destination/IDENTIFIANT > supprimer une destination
+*/
 
 destinationRouter.get("/", async (req, res) => {
 	// requete sql a exécuter
@@ -167,7 +176,7 @@ destinationRouter.put("/update", uploader.any(), async (req, res) => {
 	// récupérer les inhalas dans la base de données pour connaître l'image existante
 	const { id } = req.body;
 	const destination = await getDestinationById(id);
-
+console.log('destination', destination)
 	// récupérer le body de la requête
 	let bodyWithImage = req.body;
 
@@ -250,7 +259,7 @@ destinationRouter.delete("/delete/:id", async (req, res) => {
 		const [results] = await dbConnection.execute(query, req.params);
 
 		// supprimer l'image
-		// await fs.rm(`${uploadDirectory}${destination.photo}`);
+		await fs.rm(`${uploadDirectory}${destination.photo}`);
 
 		return res.status(200).json({
 			status: 200,
