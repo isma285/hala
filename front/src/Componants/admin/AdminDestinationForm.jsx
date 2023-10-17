@@ -43,7 +43,7 @@ const AdminDestinationForm = () => {
 			// console.log(id);
 			const responseAPI = await getDestinationById(id);
 			const destination = responseAPI.data[0];
-			console.log("vvvvvvvvvvvvvvv", destination.photo);
+			// console.log("vvvvvvvvvvvvvvv", destination.photo);
 			reset({
 				id: destination.id,
 				ville: destination.ville,
@@ -94,7 +94,7 @@ const AdminDestinationForm = () => {
 				<label>Photo :</label>
 				<input
 					type="file"
-					{...register("photo", id ?{}: { required: "Photo is required" })}
+					{...register("photo", id ? {}: { required: "Photo is required" })}
 				/>
 				<small>{errors.photo?.message}</small>
 			</p>

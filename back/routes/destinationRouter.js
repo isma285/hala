@@ -125,7 +125,7 @@ destinationRouter.post("/create", uploader.any(), async (req, res) => {
 		req.files[0].mimetype,
 	)}`;
 
-	console.log(req.body, req.files);
+	// console.log(req.body, req.);
 	// requete sql a exécuter
 	const query = `
       
@@ -176,7 +176,7 @@ destinationRouter.put("/update", uploader.any(), async (req, res) => {
 	// récupérer les inhalas dans la base de données pour connaître l'image existante
 	const { id } = req.body;
 	const destination = await getDestinationById(id);
-console.log('destination', destination)
+// console.log('destination', destination)
 	// récupérer le body de la requête
 	let bodyWithImage = req.body;
 
@@ -211,7 +211,7 @@ console.log('destination', destination)
 			destination.ville = :ville,
 			destination.photo = :photo,
 			destination.textdescription = :textdescription,
-			destination.tendance = :tendance,
+			destination.tendance = :tendance
 			WHERE destination.id = :id;
 		`;
 

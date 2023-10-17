@@ -64,49 +64,6 @@ const getOffresByDestinations = async (id) => {
 	// renvoyer la reponse
 	return response;
 };
-
-const createUser = async (values) => {
-	const requestInfos = new Request("http://localhost:3000/client/register", {
-		method: "post",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(values),
-	});
-	const request = await fetch(requestInfos);
-	const response = await request.json();
-	return response;
-};
-
-const createDestination = async (values) => {
-	console.log(values);
-	const requestInfos = new Request("http://localhost:3000/destination/create", {
-		method: "post",
-		// headers: {
-		// 	"Content-Type": "application/json",
-		// },
-		// body: JSON.stringify(values),
-		body: values,
-	});
-	console.log(requestInfos);
-	const request = await fetch(requestInfos);
-	const response = await request.json();
-	return response;
-};
-
-const checkClient = async (values) => {
-	const requestInfos = new Request("http://localhost:3000/client/login", {
-		method: "post",
-		headers: {
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify(values),
-	});
-	const request = await fetch(requestInfos);
-	const response = await request.json();
-	return response;
-};
-
 const updateDestination = async (values) => {
 	console.log(values);
 	const requestInfos = new Request("http://localhost:3000/destination/update", {
@@ -134,6 +91,50 @@ const deleteDestination = async (id) => {
 	const response = await request.json();
 	return response;
 };
+
+const createDestination = async (values) => {
+	console.log(values);
+	const requestInfos = new Request("http://localhost:3000/destination/create", {
+		method: "post",
+		// headers: {
+		// 	"Content-Type": "application/json",
+		// },
+		// body: JSON.stringify(values),
+		body: values,
+	});
+	console.log(requestInfos);
+	const request = await fetch(requestInfos);
+	const response = await request.json();
+	return response;
+};
+
+const createUser = async (values) => {
+	const requestInfos = new Request("http://localhost:3000/client/register", {
+		method: "post",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(values),
+	});
+	const request = await fetch(requestInfos);
+	const response = await request.json();
+	return response;
+};
+
+const checkClient = async (values) => {
+	const requestInfos = new Request("http://localhost:3000/client/login", {
+		method: "post",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(values),
+	});
+	const request = await fetch(requestInfos);
+	const response = await request.json();
+	return response;
+};
+
+
 
 export {
 	getDestinationById,

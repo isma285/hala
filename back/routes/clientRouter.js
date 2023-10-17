@@ -1,6 +1,8 @@
 import express from "express";
 import dbConnection from "../services/dbConnection.js";
 import argon2 from "argon2";
+
+
 const clientRouter = express.Router();
 
 clientRouter.get("/", async (req, res) => {
@@ -30,34 +32,65 @@ clientRouter.get("/", async (req, res) => {
 		});
 	}
 });
+clientRouter.get("/:id", async (req, res) => {
+	// requete sql a éxécuter
+	const { id } = req.params;
 
-// clientRouter.post("/create", async (req, res) => {
-// 	// requete sql a éxécuter
-// 	const query = `
-//     INSERT INTO hala.client
-//     VALUE (NULL,:lastname ,:firstname,:email, :password)
-//     `;
+	const query = `
+    SELECT client.*
+    FROM hala.client
+	WHERE client.id =:id;
+    `;
 
-// 	// exécuter la requete
-// 	try {
-// 		// récuperer les resultats de la requete
-// 		const [results] = await dbConnection.execute(query, req.body);
-// 		// console.log(results);
+	// exécuter la requete
+	try {
+		// récuperer les resultats de la requete
+		const [results] = await dbConnection.execute(query, req.params);
+		// console.log(results);
 
-// 		// renvoyer la reponse HTTP
-// 		return res.status(201).json({
-// 			status: 201,
-// 			message: "OK",
+		// renvoyer la reponse HTTP
+		return res.status(200).json({
+			status: 200,
+			message: "OK",
+			// shift : récupérer le premier indice d'un array
+			data: results.shift(),
+		});
+	} catch (error) {
+		// renovoyer une erreur
+		return res.status(400).json({
+			status: 400,
+			message: "Error",
+		});
+	}
+});
 
-// 		});
-// 	} catch (error) {
-// 		// renovoyer une erreur
-// 		return res.status(400).json({
-// 			status: 400,
-// 			message: "Error",
-// 		});
-// 	}
-// });
+clientRouter.post("/create", async (req, res) => {
+	// requete sql a éxécuter
+	const query = `
+    INSERT INTO hala.client
+    VALUE (NULL,:lastname ,:firstname,:email, :password, 2)
+    `;
+
+	// exécuter la requete
+	try {
+		// récuperer les resultats de la requete
+		const [results] = await dbConnection.execute(query, req.body);
+		// console.log(results);
+
+		// renvoyer la reponse HTTP
+		return res.status(201).json({
+			status: 201,
+			message: "OK",
+
+		});
+	} catch (error) {
+		// renovoyer une erreur
+		return res.status(400).json({
+			status: 400,
+			message: "Error",
+		});
+	}
+});
 
 // créer un utilisateur
 clientRouter.post("/register", async (req, res) => {
@@ -66,12 +99,11 @@ clientRouter.post("/register", async (req, res) => {
 		...req.body,
 		password: await argon2.hash(req.body.password),
 	};
-	console.log(bodyHashed);
+	// console.log(bodyHashed);
 	// créer une requête
 	const query = `
 	INSERT INTO hala.client
     VALUE (NULL,:lastname ,:firstname,:email, :password, 2)
-   
     `;
 
 	try {
@@ -107,7 +139,7 @@ clientRouter.post("/login", async (req, res) => {
 		// récuperation des resultas de la requête
 		[results] = await dbConnection.execute(query, req.body);
 
-		console.log(results);
+		// console.log(results);
 
 		// si l'email n'existe pas dans la table
 		if (results.length === 0) {
@@ -144,6 +176,38 @@ clientRouter.post("/login", async (req, res) => {
 		message: "ok",
 		data: client
 	});
+});
+
+clientRouter.put("/update", async (req, res) => {
+	// requête
+	const query = `
+		UPDATE hala.client
+		SET
+			client.lastname = :lastname,
+			client.firstname = :firstname,
+			client.email = :email,
+		WHERE client.id = :id;
+	`;
+
+	/*
+		la valeur de la variable id de la requête SQL est définie dans un objet JS dont les propriétés reprennent les noms des variables SQL
+			variable SQL :id > { id: ... }
+			variable SQL :name et :id > { name: ..., id: ... }
+	*/
+
+	try {
+		const [results] = await dbConnection.execute(query, req.body);
+		return res.status(200).json({
+			status: 200,
+			message: "OK",
+		});
+	} catch (error) {
+		// renvoyer une erreur
+		return res.status(400).json({
+			status: 400,
+			message: "Error",
+		});
+	}
 });
 
 export default clientRouter;
