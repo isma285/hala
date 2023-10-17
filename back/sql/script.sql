@@ -14,7 +14,10 @@ CREATE TABLE hala.admin(
 
 
 -- créer la table rôle 
- 
+CREATE TABLE hala.role(
+    id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
 
 CREATE TABLE hala.client(
     id MEDIUMINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
