@@ -62,7 +62,18 @@ export const Navbar = () => {
 						setmenu(menu == "" ? "mobile-menu" : "");
 					}}
 				/> 
-   
+        {/* <Link to={"/"}>Home</Link> */}
+
+
+			{/* {user ? (
+				<Link to={"/logout"}> Logout</Link>
+			) : (
+				<>
+					<Link to={"/register"}> Register</Link>
+					<Link to={"/connexion"}> Login</Link>
+				</>
+			)} */}
+			{/* <Link to={"/admin"}> Admin</Link> */}
 			
 			</nav>
      

@@ -7,10 +7,11 @@ import fs from "node:fs/promises";
 
 const destinationRouter = express.Router();
 
-const uploadDestination = "public/img";
+const uploadDestination = "public/img/";
 const uploader = multer({
 	dest: uploadDestination,
 });
+
 // exécuter une requête sur le serveur mysql
 /*
 	le nom d'une table SQL devient une route
@@ -41,7 +42,7 @@ destinationRouter.get("/", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query);
+		const [results] = await dbConnection.query(query);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -71,7 +72,7 @@ destinationRouter.get("/all", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query);
+		const [results] = await dbConnection.query(query);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -102,7 +103,7 @@ destinationRouter.get("/:id", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, req.params);
+		const [results] = await dbConnection.query(query, req.params);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -137,7 +138,7 @@ destinationRouter.post("/create", uploader.any(), async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, {
+		const [results] = await dbConnection.query(query, {
 			...req.body,
 			photo: photo,
 		});
@@ -176,7 +177,7 @@ destinationRouter.put("/update", uploader.any(), async (req, res) => {
 	// récupérer les inhalas dans la base de données pour connaître l'image existante
 	const { id } = req.body;
 	const destination = await getDestinationById(id);
-// console.log('destination', destination)
+	// console.log('destination', destination)
 	// récupérer le body de la requête
 	let bodyWithImage = req.body;
 
@@ -198,7 +199,7 @@ destinationRouter.put("/update", uploader.any(), async (req, res) => {
 		);
 
 		// supprimer l'ancienne image
-		await fs.rm(`${uploadDirectory}${destination.photo}`);
+		await fs.rm(`${uploadDestination}${destination.photo}`);
 
 		// utiliser la nouvelle image dans le body de la requête
 		bodyWithImage = { ...bodyWithImage, photo: photo };
@@ -222,7 +223,7 @@ destinationRouter.put("/update", uploader.any(), async (req, res) => {
 	*/
 
 	try {
-		const [results] = await dbConnection.execute(query, bodyWithImage);
+		const [results] = await dbConnection.query(query, bodyWithImage);
 		return res.status(200).json({
 			status: 200,
 			message: "OK",
@@ -256,7 +257,7 @@ destinationRouter.delete("/delete/:id", async (req, res) => {
 	*/
 
 	try {
-		const [results] = await dbConnection.execute(query, req.params);
+		const [results] = await dbConnection.query(query, req.params);
 
 		// supprimer l'image
 		await fs.rm(`${uploadDirectory}${destination.photo}`);
@@ -264,7 +265,7 @@ destinationRouter.delete("/delete/:id", async (req, res) => {
 		return res.status(200).json({
 			status: 200,
 			message: "OK",
-			data:results,
+			data: results,
 		});
 	} catch (error) {
 		// renvoyer une erreur

@@ -4,6 +4,8 @@ import { deleteDestination, getAllDestinations } from "../../services/api.js";
 import "./AdminDestination.css";
 
 const AdminListDestination = () => {
+	const API_URL = import.meta.env.VITE_API_URL;
+
 	// état pour rafraîchir le composant après la suppression d'un élève
 	const [forceUpdate, setForceUpdate] = useState(false);
 
@@ -70,14 +72,15 @@ const AdminListDestination = () => {
 							<td className="td">{value.id}</td>
 							<td className="td">{value.ville}</td>
 
-							<td className="td">{value.photo}</td>
+							<td className="td">
+								<img src={`${API_URL}/img/${value.photo}`} alt={value.ville} />
+							</td>
 							<td className="td">{value.textdescription}</td>
 							<td className="td">{value.tendance}</td>
 
 							<td className="td">
 								<Link to={`/admin/destination/${value.id}/form`}>Edit</Link>
 								<Link onClick={() => handleClick(value.id)}> Delete</Link>
-								
 							</td>
 						</tr>
 					))}

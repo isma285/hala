@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./SeConnecter.css";
 import { useForm } from "react-hook-form";
-import { checkClient } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { ClientContext } from "../../providers/UserProvider";
+import { checkClient } from "../../services/api";
 
 export const SeConnecter = () => {
 

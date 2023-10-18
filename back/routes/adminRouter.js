@@ -14,7 +14,7 @@ adminRouter.get("/", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query);
+		const [results] = await dbConnection.query(query);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -32,7 +32,6 @@ adminRouter.get("/", async (req, res) => {
 	}
 });
 
-
 adminRouter.post("/", async (req, res) => {
 	// requete SQL
 	const query = `
@@ -46,7 +45,7 @@ WHERE admin.email = :email;
 
 	try {
 		// récuperation des resultas de la requête
-		[results] = await dbConnection.execute(query, req.body);
+		[results] = await dbConnection.query(query, req.body);
 
 		console.log(results);
 
@@ -83,19 +82,8 @@ WHERE admin.email = :email;
 	return res.status(200).json({
 		status: 200,
 		message: "ok",
-    	data: admin
+		data: admin,
 	});
 });
-
-
-
-
-
-
-
-
-
-
-
 
 export default adminRouter;

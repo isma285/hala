@@ -13,7 +13,7 @@ destinationRouter.get("/", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query);
+		const [results] = await dbConnection.query(query);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP

@@ -19,12 +19,11 @@ app.use(router);
 router.use(express.json());
 router.use(
 	cors({
-		origin: "http://localhost:5173",
+		origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
 	}),
 );
 
-router.use(express.static('public'));
-
+router.use(express.static("public"));
 
 router.use("/destination", destinationRouter);
 
@@ -34,7 +33,7 @@ router.use("/client", clientRouter);
 
 router.use("/admin", adminRouter);
 
-router.use("/hebergement",typehebergementRouter);
+router.use("/hebergement", typehebergementRouter);
 
 // router.get("/", async (req, res) => {
 
@@ -44,7 +43,7 @@ router.use("/hebergement",typehebergementRouter);
 //     `;
 
 // 	try {
-// 		const [results] = await dbConnection.execute(query);
+// 		const [results] = await dbConnection.query(query);
 // 		return res.status(200).json({
 // 			status: 200,
 // 			message: "OK!",
@@ -71,13 +70,13 @@ router.use("/hebergement",typehebergementRouter);
 // 	 hala.destination
 // 	ON
 // 	 offres.destination_id = destination.id
-// 	WHERE 
+// 	WHERE
 // 		typehebergement.tyhotelapart = "Hôtel"
 // 	;
 //     `;
 
 // 	try {
-// 		const [results] = await dbConnection.execute(query);
+// 		const [results] = await dbConnection.query(query);
 // 		return res.status(200).json({
 // 			status: 200,
 // 			message: "OK!",
@@ -98,7 +97,7 @@ router.use("/hebergement",typehebergementRouter);
 //     `;
 
 // 	try {
-// 		const [results] = await dbConnection.execute(query);
+// 		const [results] = await dbConnection.query(query);
 // 		return res.status(200).json({
 // 			status: 200,
 // 			message: "OK!",

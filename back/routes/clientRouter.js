@@ -2,7 +2,6 @@ import express from "express";
 import dbConnection from "../services/dbConnection.js";
 import argon2 from "argon2";
 
-
 const clientRouter = express.Router();
 
 clientRouter.get("/", async (req, res) => {
@@ -15,7 +14,7 @@ clientRouter.get("/", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query);
+		const [results] = await dbConnection.query(query);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -45,7 +44,7 @@ clientRouter.get("/:id", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, req.params);
+		const [results] = await dbConnection.query(query, req.params);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -74,14 +73,13 @@ clientRouter.post("/create", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.query(query, req.body);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
 		return res.status(201).json({
 			status: 201,
 			message: "OK",
-
 		});
 	} catch (error) {
 		// renovoyer une erreur
@@ -108,7 +106,7 @@ clientRouter.post("/register", async (req, res) => {
 
 	try {
 		// rcupere le body de la requete avec la propriete body de la requtes
-		const [results] = await dbConnection.execute(query, bodyHashed);
+		const [results] = await dbConnection.query(query, bodyHashed);
 
 		return res.status(201).json({
 			status: 201,
@@ -137,7 +135,7 @@ clientRouter.post("/login", async (req, res) => {
 
 	try {
 		// récuperation des resultas de la requête
-		[results] = await dbConnection.execute(query, req.body);
+		[results] = await dbConnection.query(query, req.body);
 
 		// console.log(results);
 
@@ -163,10 +161,10 @@ clientRouter.post("/login", async (req, res) => {
     req.body.password : la saisie en clair du champ de formulaire nommé password 
   */
 
-	if (! (await argon2.verify(client.password, req.body.password))) {
+	if (!(await argon2.verify(client.password, req.body.password))) {
 		return res.status(403).json({
 			status: 403,
-			message: "forbidden"
+			message: "forbidden",
 		});
 	}
 
@@ -174,7 +172,7 @@ clientRouter.post("/login", async (req, res) => {
 	return res.status(200).json({
 		status: 200,
 		message: "ok",
-		data: client
+		data: client,
 	});
 });
 
@@ -196,7 +194,7 @@ clientRouter.put("/update", async (req, res) => {
 	*/
 
 	try {
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.query(query, req.body);
 		return res.status(200).json({
 			status: 200,
 			message: "OK",

@@ -23,7 +23,7 @@ offresRouter.get("/", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query);
+		const [results] = await dbConnection.query(query);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -52,7 +52,7 @@ offresRouter.post("/create", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.query(query, req.body);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP
@@ -85,7 +85,7 @@ offresRouter.put("update", async (req, res) => {
 	`;
 
 	try {
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.query(query, req.body);
 		return res.status(200).json({
 			status: 200,
 			message: "OK",
@@ -107,7 +107,7 @@ offresRouter.delete("/delete", async (req, res) => {
 		WHERE destination.id = :id;
 	`;
 	try {
-		const [results] = await dbConnection.execute(query, req.body);
+		const [results] = await dbConnection.query(query, req.body);
 		return res.status(200).json({
 			status: 200,
 			message: "OK",
@@ -136,7 +136,7 @@ offresRouter.get("/destination/:id", async (req, res) => {
 	// exécuter la requete
 	try {
 		// récuperer les resultats de la requete
-		const [results] = await dbConnection.execute(query, req.params);
+		const [results] = await dbConnection.query(query, req.params);
 		// console.log(results);
 
 		// renvoyer la reponse HTTP

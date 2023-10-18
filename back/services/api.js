@@ -10,7 +10,7 @@ const getDestinationById = async (id) => {
 	`;
 
 	try {
-		const [results] = await dbConnection.execute(query, { id: id });
+		const [results] = await dbConnection.query(query, { id: id });
 		return results.shift();
 	} catch (error) {
 		// renvoyer une erreur
